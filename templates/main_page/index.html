@@ -1,0 +1,244 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ fio }}{% endblock %}
+
+{% block body %}
+    <!-- ******HEADER****** -->
+    <header class="header">
+        <div class="container">
+            <div class="profile-image-wrapper">
+                <img class="profile-image img-responsive pull-left"
+                     src="{{ profile_image }}"
+                     alt=""
+                />
+            </div>
+            <div class="profile-content pull-left">
+                <h1 class="name">{{ fio }}</h1>
+                <h2 class="desc">{{ specs }}</h2>
+                <ul class="social list-inline">
+                    <li><a href="https://t.me/{{ tg }}" target="_blank"><i class="fab fa-telegram-plane"></i></a></li>
+                    <li><a href="https://instagram.com/{{ inst }}" target="_blank"><i class="fab fa-instagram fa-fw"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/{{ linkedin }}" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a></li>
+                    <li class="last-item"><a href="https://github.com/{{ git }}" target="_blank"><i class="fab fa-github-alt fa-fw"></i></a></li>
+                </ul>
+            </div><!--//profile-->
+            <div class="center-block hidden-md hidden-lg"> <!--//btns visible on mobile-->
+                <a class="btn btn-lg btn-success" href="tel:{{ phone }}" target="_blank">
+                    <i class="fas fa-phone-square-alt"></i>CALL
+                </a>
+                <a class="btn btn-lg btn-success" href="mailto:{{ email }}" target="_blank">
+                    <i class="far fa-envelope-open"></i>WRITE
+                </a>
+            </div> <!--//buttons visible on mobile-->
+            <div class="info pull-right hidden-sm hidden-xs">
+                    <div class="section-inner">
+                        <h2 class="heading sr-only">Basic Information</h2>
+                        <div class="content">
+                            <ul class="list-unstyled">
+                                <li><i class="fa fa-map-marker"></i>
+                                    <span class="sr-only">Location:</span>
+                                    <a href="https://goo.gl/maps/5WJNsj3mBZHcFHJy9" target="_blank">Odessa, UA</a>
+                                </li>
+                                <li><i class="far fa-envelope-open"></i>
+                                    <span class="sr-only">Email:</span>
+                                    <a href="mailto:{{ email }}">{{ email }}</a>
+                                </li>
+                                <li><i class="fas fa-phone-square-alt"></i>
+                                    <span class="sr-only">Phone:</span>
+                                    <a class="nolink">{{ phone }}</a>
+                                </li>
+                            </ul>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </div><!--//info div-->
+        </div><!--//container-->
+    </header><!--//header-->
+    <div class="container sections-wrapper">
+        <div class="row">
+            <div class="primary col-md-8 col-sm-12 col-xs-12">
+                <section class="about section">
+                    <div class="section-inner">
+                        <h2 class="heading">About Me</h2>
+                        <div class="content">
+                            <p>
+                                I readily take on new projects and see things through to the end. I work well in a team, can resolve conflicts and compromise. At school I won prizes in programming competitions.
+                            </p>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </section><!--//about section-->
+
+                <section class="experience section">
+                    <div class="section-inner">
+                        <h2 class="heading">Work Experience</h2>
+                        <div class="content">
+                            <div class="item">
+                                <h3 class="title">IT Specialist - <span class="place"><a href="https://infosource.link/" target="_blank">LLC INFO SOURCE</a></span> <span class="year">(2019 - 2020)</span></h3>
+                                <p>Maintenance and configuration of the company's servers. Processing and fulfillment of customer requests to add servers and their maintenance.</p>
+                            </div><!--//item-->
+                            <div class="item">
+                                <h3 class="title">Translator - <span class="place"><a class="nolink">LLC MAXIMUS</a></span> <span class="year">(2017 - 2019)</span></h3>
+                                <p>Translator for the chat operator. Translation of chat messages for the operator from foreign customers.</p>
+                            </div><!--//item-->
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </section><!--//experience section-->
+
+                <section class="github section desktop visible-md visible-lg hidden-xs hidden-sm">
+                    <div class="section-inner">
+                        <h2 class="heading hidden-sm hidden-xs">GitHub Activity</h2>
+                        <div id="github-graph" class="github-graph">
+                            <div class="github-calendar">
+                            </div>
+                        </div><!--//github-graph-->
+                    </div><!--//secton-inner-->
+                </section><!--//github section-->
+
+                <section class="github section mobile visible-xs visible-sm hidden-md hidden-lg">
+                    <div class="section-inner">
+                        <h2 class="heading">GitHub Repos</h2>
+                        <div class="github-widget" data-username="{{ git }}"></div><!--//github-graph-->
+                    </div><!--//secton-inner-->
+                </section><!--//github section-->
+            </div><!--//primary-->
+            <div class="secondary col-md-4 col-sm-12 col-xs-12">
+
+               <aside class="skills aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Skills</h2>
+                        <div class="content">
+                            <div class="skillset">
+                                <div class="item">
+                                    <h3 class="level-title">
+                                        Python &amp; Django
+                                        <span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="You can use the tooltip to add more info...">
+                                            Pro
+                                        </span>
+                                    </h3>
+                                    <div class="level-bar">
+                                        <div class="level-bar-inner" data-level="86%">
+                                        </div>
+                                    </div><!--//level-bar-->
+                                </div><!--//item-->
+
+                                <div class="item">
+                                    <h3 class="level-title">Javascript &amp; jQuery<span class="level-label">Beginner</span></h3>
+                                    <div class="level-bar">
+                                        <div class="level-bar-inner" data-level="25%">
+                                        </div>
+                                    </div><!--//level-bar-->
+                                </div><!--//item-->
+
+                                <div class="item">
+                                    <h3 class="level-title">HTML5, CSS3<span class="level-label">Middle</span></h3>
+                                    <div class="level-bar">
+                                        <div class="level-bar-inner" data-level="35%">
+                                        </div>
+                                    </div><!--//level-bar-->
+                                </div><!--//item-->
+
+                                <div class="item">
+                                    <h3 class="level-title">C++<span class="level-label">Middle</span></h3>
+                                    <div class="level-bar">
+                                        <div class="level-bar-inner" data-level="55%">
+                                        </div>
+                                    </div><!--//level-bar-->
+                                </div><!--//item-->
+                            </div>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </aside><!--//skills section-->
+
+               <aside class="education aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Education</h2>
+                        <div class="content">
+                            <div class="item">
+                                <h3 class="title"><i class="fas fa-graduation-cap"></i> Software Development</h3>
+                                <h4 class="university">IT STEP Computer Academy <span class="year">(2018-2019)</span></h4>
+                            </div><!--//item-->
+                            <div class="item">
+                                <h3 class="title"><i class="fas fa-graduation-cap"></i> Department of Telecommunications Systems</h3>
+                                <h4 class="university">Odessa National Academy of Telecommunications <span class="year">(2014-2017)</span></h4>
+                            </div><!--//item-->
+                            <div class="item">
+                                <h3 class="title"><i class="fas fa-graduation-cap"></i> Computer engineering</h3>
+                                <h4 class="university">National Aviation University <span class="year">(2013-2014)</span></h4>
+                            </div><!--//item-->
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </aside><!--//education section-->
+
+               <aside class="languages aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Languages</h2>
+                        <div class="content">
+                            <ul class="list-unstyled">
+                                <li class="item">
+                                    <span class="title"><strong>Russian:</strong></span>
+                                    <span class="level">Native Speaker
+                                        <br class="visible-own visible-sm visible-xs"/>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </span>
+                                </li><!--//item-->
+                                <li class="item">
+                                    <span class="title"><strong>Ukrainian:</strong></span>
+                                    <span class="level">Native Speaker
+                                        <br class="visible-own visible-sm visible-xs"/>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </span>
+                                </li><!--//item-->
+                                <li class="item">
+                                    <span class="title"><strong>English:</strong></span>
+                                    <span class="level">Technical Documentation
+                                        <br class="visible-own visible-sm visible-xs"/>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </span>
+                                </li><!--//item-->
+                            </ul>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+               </aside><!--//languages section-->
+
+               <aside class="list music aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Favourite coding music</h2>
+                        <div class="content">
+                            <ul class="list-unstyled">
+                                <li><i class="fa fa-headphones"></i>
+                                    <a href="https://music.youtube.com/playlist?list=PLUvG8hrB182mkCVMGppOtbMtdo1szUxIx" target="_blank">
+                                        lo-fi JAP [YouTube.Music]
+                                    </a>
+                                </li>
+                            </ul>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+               </aside><!--//list music section-->
+
+            </div><!--//secondary-->
+        </div><!--//row-->
+    </div>
+    <div class="toasty-ee">
+        <img src="{% static 'main_page/images/ee/toasty.png' %}" alt="">
+    </div>
+    <!-- Javascript -->
+    <script type="text/javascript" src="{% static 'main_page/plugins/jquery-1.11.3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'main_page/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!-- github activity plugin -->
+    <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+    <script src="{% static 'main_page/plugins/github-card-widget/github-card-widget.js' %}"></script>
+    <!-- custom js -->
+    <script type="text/javascript" src="{% static 'main_page/js/main.js' %}"></script>
+{% endblock %}

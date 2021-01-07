@@ -1,0 +1,28 @@
+.gh-widget-link, .gh-widget-link:hover {
+  text-decoration: none;
+}
+
+.gh-widget-container {
+  margin-bottom: 20px;
+}
+
+.gh-widget-item {
+  text-align: center;
+}
+/*Repos*/
+.gh-widget-repositories .names {
+  text-align: left;
+  float: left !important;
+}
+
+.gh-widget-repositories .language {
+  text-align: right;
+}
+/*Active time*/
+.gh-widget-active-time {
+  font-size: .8em;
+}
+
+.gh-widget-link {
+  color: #3AAA64;
+}
