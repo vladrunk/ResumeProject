@@ -17,10 +17,10 @@ def index(req):
             'git': user.git,
             'about': user.about,
             'work_exp': user.experience,
-            'skill': user.skill,
-            'edu': user.education,
-            'lang': user.language,
-            'music': user.music,
+            'skills': user.skill,
+            'edus': user.education,
+            'langs': user.language,
+            'musics': user.music,
         }
     else:
         context = {}

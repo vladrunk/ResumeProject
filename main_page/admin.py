@@ -16,7 +16,7 @@ class ExperienceAdmin(admin.ModelAdmin):
 
 @admin.register(Skill)
 class SkillAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'level', ]
+    list_display = ['id', 'title', 'level', ]
 
 
 @admin.register(Education)
@@ -26,7 +26,7 @@ class EducationAdmin(admin.ModelAdmin):
 
 @admin.register(Language)
 class LanguageAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'level', ]
+    list_display = ['id', 'title', 'level', ]
     form = LanguageForm
 
 

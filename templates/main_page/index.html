@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static %}{% load mathfilters %}
 
 {% block title %}{{ fio }}{% endblock %}
 
@@ -61,9 +61,7 @@
                     <div class="section-inner">
                         <h2 class="heading">About Me</h2>
                         <div class="content">
-                            <p>
-                                I readily take on new projects and see things through to the end. I work well in a team, can resolve conflicts and compromise. At school I won prizes in programming competitions.
-                            </p>
+                            <p>{{ about }}</p>
                         </div><!--//content-->
                     </div><!--//section-inner-->
                 </section><!--//about section-->
@@ -72,14 +70,21 @@
                     <div class="section-inner">
                         <h2 class="heading">Work Experience</h2>
                         <div class="content">
+                        {% for work in work_exp.all %}
                             <div class="item">
-                                <h3 class="title">IT Specialist - <span class="place"><a href="https://infosource.link/" target="_blank">LLC INFO SOURCE</a></span> <span class="year">(2019 - 2020)</span></h3>
-                                <p>Maintenance and configuration of the company's servers. Processing and fulfillment of customer requests to add servers and their maintenance.</p>
+                                <h3 class="title">{{ work.position }} -
+                                    <span class="place">
+                                        <a {% if work.link %}
+                                            href="{{ work.link }}" target="_blank"
+                                        {% else %}
+                                            class="nolink"
+                                        {% endif %}>{{ work.company }}</a>
+                                    </span>
+                                    <span class="year"> ({{ work.year_start }} - {{ work.year_end }})</span>
+                                </h3>
+                                <p>{{ work.essentials }}</p>
                             </div><!--//item-->
-                            <div class="item">
-                                <h3 class="title">Translator - <span class="place"><a class="nolink">LLC MAXIMUS</a></span> <span class="year">(2017 - 2019)</span></h3>
-                                <p>Translator for the chat operator. Translation of chat messages for the operator from foreign customers.</p>
-                            </div><!--//item-->
+                        {% endfor %}
                         </div><!--//content-->
                     </div><!--//section-inner-->
                 </section><!--//experience section-->
@@ -108,42 +113,28 @@
                         <h2 class="heading">Skills</h2>
                         <div class="content">
                             <div class="skillset">
+                            {% for skill in skills.all %}
                                 <div class="item">
                                     <h3 class="level-title">
-                                        Python &amp; Django
-                                        <span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="You can use the tooltip to add more info...">
-                                            Pro
+                                        {{ skill.title }}
+                                        <span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="">
+                                            {% if skill.level < 30  %}
+                                                Beginner
+                                            {% elif skill.level < 60 %}
+                                                Middle
+                                            {% elif skill.level < 90 %}
+                                                Senior
+                                            {% else %}
+                                                Pro
+                                            {% endif %}
                                         </span>
                                     </h3>
                                     <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="86%">
+                                        <div class="level-bar-inner" data-level="{{ skill.level }}%">
                                         </div>
                                     </div><!--//level-bar-->
                                 </div><!--//item-->
-
-                                <div class="item">
-                                    <h3 class="level-title">Javascript &amp; jQuery<span class="level-label">Beginner</span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="25%">
-                                        </div>
-                                    </div><!--//level-bar-->
-                                </div><!--//item-->
-
-                                <div class="item">
-                                    <h3 class="level-title">HTML5, CSS3<span class="level-label">Middle</span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="35%">
-                                        </div>
-                                    </div><!--//level-bar-->
-                                </div><!--//item-->
-
-                                <div class="item">
-                                    <h3 class="level-title">C++<span class="level-label">Middle</span></h3>
-                                    <div class="level-bar">
-                                        <div class="level-bar-inner" data-level="55%">
-                                        </div>
-                                    </div><!--//level-bar-->
-                                </div><!--//item-->
+                            {% endfor %}
                             </div>
                         </div><!--//content-->
                     </div><!--//section-inner-->
@@ -153,18 +144,12 @@
                     <div class="section-inner">
                         <h2 class="heading">Education</h2>
                         <div class="content">
+                            {% for edu in edus.all %}
                             <div class="item">
-                                <h3 class="title"><i class="fas fa-graduation-cap"></i> Software Development</h3>
-                                <h4 class="university">IT STEP Computer Academy <span class="year">(2018-2019)</span></h4>
+                                <h3 class="title"><i class="fas fa-graduation-cap"> </i>{{ edu.specialization }}</h3>
+                                <h4 class="university">{{ edu.university }}<span class="year"> ({{ edu.year_start }}-{{ edu.year_end }})</span></h4>
                             </div><!--//item-->
-                            <div class="item">
-                                <h3 class="title"><i class="fas fa-graduation-cap"></i> Department of Telecommunications Systems</h3>
-                                <h4 class="university">Odessa National Academy of Telecommunications <span class="year">(2014-2017)</span></h4>
-                            </div><!--//item-->
-                            <div class="item">
-                                <h3 class="title"><i class="fas fa-graduation-cap"></i> Computer engineering</h3>
-                                <h4 class="university">National Aviation University <span class="year">(2013-2014)</span></h4>
-                            </div><!--//item-->
+                            {% endfor %}
                         </div><!--//content-->
                     </div><!--//section-inner-->
                 </aside><!--//education section-->
@@ -174,39 +159,38 @@
                         <h2 class="heading">Languages</h2>
                         <div class="content">
                             <ul class="list-unstyled">
+                            {% for lang in langs.all %}
                                 <li class="item">
-                                    <span class="title"><strong>Russian:</strong></span>
-                                    <span class="level">Native Speaker
+                                    <span class="title"><strong>{{ lang.title }}:</strong></span>
+                                    <span class="level">
+                                    {% if lang.level >= 5 %}
+                                        Native Speaker
+                                    {% elif lang.level >= 4 %}
+                                        Fluent
+                                    {% elif lang.level >= 3 %}
+                                        Advanced
+                                    {% elif lang.level >= 2 %}
+                                         Technical Documentation
+                                    {% else %}
+                                        Basic
+                                    {% endif %}
                                         <br class="visible-own visible-sm visible-xs"/>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
+                                    {% with ''|center:lang.max_level as range %}
+                                    {% for _ in range %}
+                                        {% with lang.level|sub:forloop.counter as dif %}
+                                        {% if dif.real == -0.5 %}
+                                            <i class="fas fa-star-half-alt"></i>
+                                        {% elif dif >= 0 %}
+                                            <i class="fas fa-star"></i>
+                                        {% else %}
+                                            <i class="far fa-star"></i>
+                                        {% endif %}
+                                        {% endwith %}
+                                    {% endfor %}
+                                    {% endwith %}
                                     </span>
                                 </li><!--//item-->
-                                <li class="item">
-                                    <span class="title"><strong>Ukrainian:</strong></span>
-                                    <span class="level">Native Speaker
-                                        <br class="visible-own visible-sm visible-xs"/>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </span>
-                                </li><!--//item-->
-                                <li class="item">
-                                    <span class="title"><strong>English:</strong></span>
-                                    <span class="level">Technical Documentation
-                                        <br class="visible-own visible-sm visible-xs"/>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </span>
-                                </li><!--//item-->
+                            {% endfor %}
                             </ul>
                         </div><!--//content-->
                     </div><!--//section-inner-->
@@ -217,11 +201,12 @@
                         <h2 class="heading">Favourite coding music</h2>
                         <div class="content">
                             <ul class="list-unstyled">
-                                <li><i class="fa fa-headphones"></i>
-                                    <a href="https://music.youtube.com/playlist?list=PLUvG8hrB182mkCVMGppOtbMtdo1szUxIx" target="_blank">
-                                        lo-fi JAP [YouTube.Music]
-                                    </a>
+                            {% for music in musics.all %}
+                                <li>
+                                    <i class="fa fa-headphones"> </i>
+                                    <a href="{{ music.link }}" target="_blank">{{ music.title }}</a>
                                 </li>
+                            {% endfor %}
                             </ul>
                         </div><!--//content-->
                     </div><!--//section-inner-->

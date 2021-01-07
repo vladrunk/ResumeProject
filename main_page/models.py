@@ -128,7 +128,7 @@ class Experience(models.Model):
         blank=True,
         verbose_name='Обязаности',
     )
-    link_company = models.URLField(
+    link = models.URLField(
         default='',
         blank=True,
         verbose_name='Сайт компании',
@@ -143,7 +143,7 @@ class Experience(models.Model):
 
 
 class Skill(models.Model):
-    name = models.CharField(
+    title = models.CharField(
         default='',
         max_length=150,
         verbose_name='Навык',
@@ -158,7 +158,7 @@ class Skill(models.Model):
     )
 
     def __str__(self):
-        return self.name
+        return self.title
 
     class Meta:
         verbose_name = 'Навык'
@@ -196,7 +196,9 @@ class Education(models.Model):
 
 
 class Language(models.Model):
-    name = models.CharField(
+    max_level = 5
+    min_level = 1
+    title = models.CharField(
         default='',
         max_length=150,
         verbose_name='Язык',
@@ -207,13 +209,13 @@ class Language(models.Model):
         default=1,
         verbose_name='Уровень',
         validators=[
-            MaxValueValidator(5),
-            MinValueValidator(1),
+            MaxValueValidator(max_level),
+            MinValueValidator(min_level),
         ]
     )
 
     def __str__(self):
-        return self.name
+        return self.title
 
     class Meta:
         verbose_name = 'Язык'

@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main_page.apps.MainPageConfig',
     'phonenumber_field',
+    'mathfilters',
 ]
 
 MIDDLEWARE = [
