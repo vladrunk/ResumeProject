@@ -3,10 +3,7 @@ from os import environ
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = environ.get('DJANGO_SECRET') if environ.get('DJANGO_SECRET') else 'u&nn=6e%h7b-)g*w(' \
-                                                                               'zexm&@5jj_p2u&nn=6^8vyyxm&@5jj_p2u&nn' \
-                                                                               '=6e%h7b-)g*w(' \
-                                                                               'zexm&@5jj_p2u&nn=6e%h7b5ayuq1mr '
+SECRET_KEY = environ.get('DJANGO_SECRET')
 
 DEBUG = True
 
