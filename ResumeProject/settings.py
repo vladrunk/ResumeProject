@@ -10,7 +10,7 @@ DEBUG = True
 if DEBUG:
     ALLOWED_HOSTS = ['*', ]
 else:
-    ALLOWED_HOSTS = ['vladrunk.tech', ]
+    ALLOWED_HOSTS = ['vladrunk.tech', 'www.vladrunk.tech']
 
 
 INSTALLED_APPS = [
