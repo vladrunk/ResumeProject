@@ -7,9 +7,11 @@ SECRET_KEY = environ.get('DJANGO_SECRET')
 
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    '*',
-]
+if DEBUG:
+    ALLOWED_HOSTS = ['*', ]
+else:
+    ALLOWED_HOSTS = ['vladrunk.tech', ]
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -91,7 +93,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = BASE_DIR / 'assets/'
+STATIC_ROOT = BASE_DIR / 'static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
