@@ -3,14 +3,17 @@ from os import environ
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = environ.get('DJANGO_SECRET')
+print(environ.get('DJANGO_SECRET'))
 
-DEBUG = False
+SECRETSECRET_KEY_KEY = environ.get('DJANGO_SECRET')
 
-if DEBUG:
-    ALLOWED_HOSTS = ['*', ]
-else:
-    ALLOWED_HOSTS = ['vladrunk.tech', 'www.vladrunk.tech', ]
+print(
+
+DEBUG = True
+
+ALLOWED_HOSTS = [
+    '*',
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -91,7 +94,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'static/'
+
+STATIC_ROOT = BASE_DIR / 'assets/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media/'

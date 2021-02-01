@@ -8,7 +8,7 @@ $(document).ready(function($) {
     }
     /*======= Easter Egg Profile Image =======*/
     if (!isMobile()) {
-        let toasty_sound = new Audio('http://www.realmofdarkness.net/audio/vg/mk/mkg/danforden/toasty.mp3');
+        let toasty_sound = new Audio('https://www.realmofdarkness.net/audio/vg/mk/mkg/danforden/toasty.mp3');
         toasty_sound.volume = 0.05;
         let toasty_image = $('.toasty-ee');
         let profile_image = $('.profile-image');

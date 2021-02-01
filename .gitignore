@@ -8,6 +8,7 @@ __pycache__/
 # C extensions
 *.so
 
+static/
 main_page/migrations
 media/
 
