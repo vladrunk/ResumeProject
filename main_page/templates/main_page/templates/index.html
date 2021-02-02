@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
-{% load static %}{% load mathfilters %}
+{% load static %}{% load mathfilters %}{% load i18n %}
 
-{% block title %}{{ fio }}{% endblock %}
+{% block title %}{% translate fio %}{% endblock %}
 
 {% block body %}
     <!-- ******HEADER****** -->
@@ -10,12 +10,12 @@
             <div class="profile-image-wrapper">
                 <img class="profile-image img-responsive pull-left"
                      src="{{ profile_image }}"
-                     alt=""
+                     alt="¯\_(ツ)_/¯"
                 />
             </div>
             <div class="profile-content pull-left">
-                <h1 class="name">{{ fio }}</h1>
-                <h2 class="desc">{{ specs }}</h2>
+                <h1 class="name">{% translate fio %}</h1>
+                <h2 class="desc">{% translate specs %}</h2>
                 <ul class="social list-inline">
                     <li><a href="https://t.me/{{ tg }}" target="_blank"><i class="fab fa-telegram-plane"></i></a></li>
                     <li><a href="https://instagram.com/{{ inst }}" target="_blank"><i class="fab fa-instagram fa-fw"></i></a></li>
@@ -25,27 +25,29 @@
             </div><!--//profile-->
             <div class="center-block hidden-md hidden-lg"> <!--//btns visible on mobile-->
                 <a class="btn btn-lg btn-success" href="tel:{{ phone }}" target="_blank">
-                    <i class="fas fa-phone-square-alt"></i>CALL
+                    <i class="fas fa-phone-square-alt"></i>{% translate "PHONE" %}
                 </a>
                 <a class="btn btn-lg btn-success" href="mailto:{{ email }}" target="_blank">
-                    <i class="far fa-envelope-open"></i>WRITE
+                    <i class="far fa-envelope-open"></i>{% translate "MAIL" %}
                 </a>
             </div> <!--//buttons visible on mobile-->
             <div class="info pull-right hidden-sm hidden-xs">
                     <div class="section-inner">
-                        <h2 class="heading sr-only">Basic Information</h2>
+                        <h2 class="heading sr-only">{% translate "Basic Information" %}</h2>
                         <div class="content">
                             <ul class="list-unstyled">
                                 <li><i class="fa fa-map-marker"></i>
                                     <span class="sr-only">Location:</span>
-                                    <a href="https://goo.gl/maps/5WJNsj3mBZHcFHJy9" target="_blank">Odessa, UA</a>
+                                    <a href="https://goo.gl/maps/5WJNsj3mBZHcFHJy9" target="_blank">
+                                        {% translate "Odessa, UA" %}
+                                    </a>
                                 </li>
                                 <li><i class="far fa-envelope-open"></i>
                                     <span class="sr-only">Email:</span>
                                     <a href="mailto:{{ email }}">{{ email }}</a>
                                 </li>
                                 <li><i class="fas fa-phone-square-alt"></i>
-                                    <span class="sr-only">Phone:</span>
+                                    <span class="sr-only">{% translate "Phone" %}:</span>
                                     <a class="nolink">{{ phone }}</a>
                                 </li>
                             </ul>
@@ -59,30 +61,30 @@
             <div class="primary col-md-8 col-sm-12 col-xs-12">
                 <section class="about section">
                     <div class="section-inner">
-                        <h2 class="heading">About Me</h2>
+                        <h2 class="heading">{% translate "About me" %}</h2>
                         <div class="content">
-                            <p>{{ about }}</p>
+                            <p>{% translate about %}</p>
                         </div><!--//content-->
                     </div><!--//section-inner-->
                 </section><!--//about section-->
 
                 <section class="experience section">
                     <div class="section-inner">
-                        <h2 class="heading">Work Experience</h2>
+                        <h2 class="heading">{% translate "Work experience" %}</h2>
                         <div class="content">
                         {% for work in work_exp.all %}
                             <div class="item">
-                                <h3 class="title">{{ work.position }} -
+                                <h3 class="title">{% translate work.position %} -
                                     <span class="place">
                                         <a {% if work.link %}
-                                            href="{{ work.link }}" target="_blank"
+                                            href="{% translate work.link %}" target="_blank"
                                         {% else %}
                                             class="nolink"
-                                        {% endif %}>{{ work.company }}</a>
+                                        {% endif %}>{% translate work.company %}</a>
                                     </span>
                                     <span class="year"> ({{ work.year_start }} - {{ work.year_end }})</span>
                                 </h3>
-                                <p>{{ work.essentials }}</p>
+                                <p>{% translate work.essentials %}</p>
                             </div><!--//item-->
                         {% endfor %}
                         </div><!--//content-->
@@ -91,7 +93,7 @@
 
                 <section class="github section desktop visible-md visible-lg hidden-xs hidden-sm">
                     <div class="section-inner">
-                        <h2 class="heading hidden-sm hidden-xs">GitHub Activity</h2>
+                        <h2 class="heading hidden-sm hidden-xs">{% translate "GitHub Activity" %}</h2>
                         <div id="github-graph" class="github-graph">
                             <div class="github-calendar">
                             </div>
@@ -101,7 +103,7 @@
 
                 <section class="github section mobile visible-xs visible-sm hidden-md hidden-lg">
                     <div class="section-inner">
-                        <h2 class="heading">GitHub Repos</h2>
+                        <h2 class="heading">{% translate "GitHub Repos" %}</h2>
                         <div class="github-widget" data-username="{{ git }}"></div><!--//github-graph-->
                     </div><!--//secton-inner-->
                 </section><!--//github section-->
@@ -110,7 +112,7 @@
 
                <aside class="skills aside section">
                     <div class="section-inner">
-                        <h2 class="heading">Skills</h2>
+                        <h2 class="heading">{% translate "Skills" %}</h2>
                         <div class="content">
                             <div class="skillset">
                             {% for skill in skills.all %}
@@ -119,13 +121,13 @@
                                         {{ skill.title }}
                                         <span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="">
                                             {% if skill.level < 30  %}
-                                                Beginner
+                                                {% translate "Beginner" %}
                                             {% elif skill.level < 60 %}
-                                                Middle
+                                                {% translate "Middle" %}
                                             {% elif skill.level < 90 %}
-                                                Senior
+                                                {% translate "Senior" %}
                                             {% else %}
-                                                Pro
+                                                {% translate "Pro" %}
                                             {% endif %}
                                         </span>
                                     </h3>
@@ -142,12 +144,16 @@
 
                <aside class="education aside section">
                     <div class="section-inner">
-                        <h2 class="heading">Education</h2>
+                        <h2 class="heading">{% translate "Education" %}</h2>
                         <div class="content">
                             {% for edu in edus.all %}
                             <div class="item">
-                                <h3 class="title"><i class="fas fa-graduation-cap"> </i>{{ edu.specialization }}</h3>
-                                <h4 class="university">{{ edu.university }}<span class="year"> ({{ edu.year_start }}-{{ edu.year_end }})</span></h4>
+                                <h3 class="title"><i class="fas fa-graduation-cap"> </i>
+                                    {%  translate edu.specialization %}
+                                </h3>
+                                <h4 class="university">{% translate edu.university %}
+                                    <span class="year"> ({{ edu.year_start }}-{{ edu.year_end }})</span>
+                                </h4>
                             </div><!--//item-->
                             {% endfor %}
                         </div><!--//content-->
@@ -156,23 +162,23 @@
 
                <aside class="languages aside section">
                     <div class="section-inner">
-                        <h2 class="heading">Languages</h2>
+                        <h2 class="heading">{% translate "Languages" %}</h2>
                         <div class="content">
                             <ul class="list-unstyled">
                             {% for lang in langs.all %}
                                 <li class="item">
-                                    <span class="title"><strong>{{ lang.title }}:</strong></span>
+                                    <span class="title"><strong>{% translate lang.title %}:</strong></span>
                                     <span class="level">
                                     {% if lang.level >= 5 %}
-                                        Native Speaker
+                                        {% translate "Native Speaker" %}
                                     {% elif lang.level >= 4 %}
-                                        Fluent
+                                        {% translate "Fluent" %}
                                     {% elif lang.level >= 3 %}
-                                        Advanced
+                                        {% translate "Advanced" %}
                                     {% elif lang.level >= 2 %}
-                                         Technical Documentation
+                                         {% translate "Technical Documentation" %}
                                     {% else %}
-                                        Basic
+                                        {% translate "Basic" %}
                                     {% endif %}
                                         <br class="visible-own visible-sm visible-xs"/>
                                     {% with ''|center:lang.max_level as range %}
@@ -198,13 +204,13 @@
 
                <aside class="list music aside section">
                     <div class="section-inner">
-                        <h2 class="heading">Favourite coding music</h2>
+                        <h2 class="heading">{% translate "Favourite coding music" %}</h2>
                         <div class="content">
                             <ul class="list-unstyled">
                             {% for music in musics.all %}
                                 <li>
                                     <i class="fa fa-headphones"> </i>
-                                    <a href="{{ music.link }}" target="_blank">{{ music.title }}</a>
+                                    <a href="{{ music.link }}" target="_blank">{% translate music.title %}</a>
                                 </li>
                             {% endfor %}
                             </ul>

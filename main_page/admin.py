@@ -1,16 +1,36 @@
 from django.contrib import admin
+from django.utils.translation import ugettext_lazy as _
 
 from .forms import LanguageForm
 from .models import User, Experience, Language, Education, Skill, Music4Code
 
+from modeltranslation.admin import TabbedTranslationAdmin
 
 @admin.register(User)
-class UserAdmin(admin.ModelAdmin):
+class UserAdmin(TabbedTranslationAdmin):
     list_display = ['id', 'first_name', 'last_name', ]
+    fieldsets = (
+        (None, {
+            'fields': (('first_name', 'last_name'), 'specialization')
+        }),
+        (_('Photo'), {
+            'fields': ('avatar',),
+            'classes': ('wide',),
+        }),
+        (_('Social networks'), {
+            'fields': (('tg', 'inst'), ('linkedin', 'git')),
+        }),
+        (_('Contacts'), {
+            'fields': ('phone', 'email'),
+        }),
+        (_('Basic Information'), {
+            'fields': ('about', 'experience', 'skill', 'education', 'language', 'music'),
+        }),
+    )
 
 
 @admin.register(Experience)
-class ExperienceAdmin(admin.ModelAdmin):
+class ExperienceAdmin(TabbedTranslationAdmin):
     list_display = ['id', 'company', 'position', 'year_start', 'year_end', ]
 
 
@@ -20,12 +40,12 @@ class SkillAdmin(admin.ModelAdmin):
 
 
 @admin.register(Education)
-class EducationAdmin(admin.ModelAdmin):
+class EducationAdmin(TabbedTranslationAdmin):
     list_display = ['id', 'university', 'year_start', 'year_end', ]
 
 
 @admin.register(Language)
-class LanguageAdmin(admin.ModelAdmin):
+class LanguageAdmin(TabbedTranslationAdmin):
     list_display = ['id', 'title', 'level', ]
     form = LanguageForm
 

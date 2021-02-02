@@ -1,0 +1,236 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-02 22:05+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%"
+"100>=11 && n%100<=14)? 2 : 3);\n"
+#: .\admin.py:16 .\models.py:29
+msgid "Photo"
+msgstr "Фото"
+
+#: .\admin.py:20
+msgid "Social networks"
+msgstr "Социальные сети"
+
+#: .\admin.py:23
+msgid "Contacts"
+msgstr "Контакты"
+
+#: .\admin.py:26 .\templates\main_page\templates\index.html:36
+msgid "Basic Information"
+msgstr "Основная информация"
+
+#: .\apps.py:7
+msgid "Main application"
+msgstr "Главное приложение"
+
+#: .\models.py:15
+msgid "First Name"
+msgstr "Имя"
+
+#: .\models.py:20
+msgid "Last Name"
+msgstr "Фамилия"
+
+#: .\models.py:25 .\models.py:178
+msgid "Specialization"
+msgstr "Специальность"
+
+#: .\models.py:36
+msgid "Telegram"
+msgstr "Telegram"
+
+#: .\models.py:42
+msgid "Instagram"
+msgstr "Instagram"
+
+#: .\models.py:48
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: .\models.py:54
+msgid "GitHub"
+msgstr "GitHub"
+
+#: .\models.py:59 .\templates\main_page\templates\index.html:50
+msgid "Phone"
+msgstr "Телефон"
+
+#: .\models.py:65
+msgid "Email"
+msgstr "Почта"
+
+#: .\models.py:70 .\templates\main_page\templates\index.html:64
+msgid "About me"
+msgstr "Обо мне"
+
+#: .\models.py:73 .\models.py:142
+msgid "Experience"
+msgstr "Опыт работы"
+
+#: .\models.py:78 .\models.py:165
+msgid "Skill"
+msgstr "Навык"
+
+#: .\models.py:83 .\models.py:195
+#: .\templates\main_page\templates\index.html:147
+msgid "Education"
+msgstr "Образование"
+
+#: .\models.py:88 .\models.py:222
+msgid "Language"
+msgstr "Язык"
+
+#: .\models.py:93
+msgid "Playlist"
+msgstr "Плэйлист"
+
+#: .\models.py:102
+msgid "User"
+msgstr "Юзер"
+
+#: .\models.py:103
+msgid "Users"
+msgstr "Юзеры"
+
+#: .\models.py:110
+msgid "Company"
+msgstr "Компания"
+
+#: .\models.py:115
+msgid "Position"
+msgstr "Должность"
+
+#: .\models.py:120 .\models.py:183
+msgid "Year of start"
+msgstr "Год начала"
+
+#: .\models.py:125 .\models.py:188
+msgid "Year of completion"
+msgstr "Год окончания"
+
+#: .\models.py:130
+msgid "Essentials"
+msgstr "Обязательства"
+
+#: .\models.py:135
+msgid "Company site"
+msgstr "Сайт компании"
+
+#: .\models.py:143
+msgid "Experiences"
+msgstr "Опыты работ"
+
+#: .\models.py:150 .\models.py:205 .\models.py:229
+msgid "Title"
+msgstr "Название"
+
+#: .\models.py:158 .\models.py:211
+msgid "Level"
+msgstr "Уровень"
+
+#: .\models.py:166 .\templates\main_page\templates\index.html:115
+msgid "Skills"
+msgstr "Навыки"
+
+#: .\models.py:173
+msgid "University"
+msgstr "Университет"
+
+#: .\models.py:196
+msgid "Educations"
+msgstr "Образование"
+
+#: .\models.py:223 .\templates\main_page\templates\index.html:165
+msgid "Languages"
+msgstr "Языки"
+
+#: .\models.py:234
+msgid "Playlist link"
+msgstr "Ссылка на плэйлист"
+
+#: .\models.py:241
+msgid "Music4Code"
+msgstr "Музыка для кодинга"
+
+#: .\models.py:242
+msgid "Musics4Code"
+msgstr "Музыка для кодинга"
+
+#: .\templates\main_page\templates\index.html:28
+msgid "PHONE"
+msgstr "ТЕЛЕФОН"
+
+#: .\templates\main_page\templates\index.html:31
+msgid "MAIL"
+msgstr "ПОЧТА"
+
+#: .\templates\main_page\templates\index.html:42
+msgid "Odessa, UA"
+msgstr "Одесса, Украина"
+
+#: .\templates\main_page\templates\index.html:73
+msgid "Work experience"
+msgstr "Опыт работы"
+
+#: .\templates\main_page\templates\index.html:96
+msgid "GitHub Activity"
+msgstr "GitHub Активность"
+
+#: .\templates\main_page\templates\index.html:106
+msgid "GitHub Repos"
+msgstr "GitHub Репозитории"
+
+#: .\templates\main_page\templates\index.html:124
+msgid "Beginner"
+msgstr "Начальный"
+
+#: .\templates\main_page\templates\index.html:126
+msgid "Middle"
+msgstr "Средний"
+
+#: .\templates\main_page\templates\index.html:128
+msgid "Senior"
+msgstr "Старший"
+
+#: .\templates\main_page\templates\index.html:130
+msgid "Pro"
+msgstr "Про"
+
+#: .\templates\main_page\templates\index.html:173
+msgid "Native Speaker"
+msgstr "Родной"
+
+#: .\templates\main_page\templates\index.html:175
+msgid "Fluent"
+msgstr "Свободное владение"
+
+#: .\templates\main_page\templates\index.html:177
+msgid "Advanced"
+msgstr "Продвинутый"
+
+#: .\templates\main_page\templates\index.html:179
+msgid "Technical Documentation"
+msgstr "Техническая документация"
+
+#: .\templates\main_page\templates\index.html:181
+msgid "Basic"
+msgstr "Базовый"
+
+#: .\templates\main_page\templates\index.html:207
+msgid "Favourite coding music"
+msgstr "Музыка для кодинга"

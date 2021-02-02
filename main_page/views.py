@@ -6,6 +6,7 @@ def index(req):
     user = User.objects.filter(id=1)[0]
     if user:
         context = {
+            'browse_lang': req.LANGUAGE_CODE,
             'profile_image': user.avatar.url,
             'fio': f'{user.first_name} {user.last_name}',
             'specs': user.specialization,
@@ -24,4 +25,4 @@ def index(req):
         }
     else:
         context = {}
-    return render(req, 'main_page/index.html', context)
+    return render(req, 'main_page/templates/index.html', context)

@@ -1,11 +1,12 @@
 from pathlib import Path
 from os import environ
+from django.utils.translation import ugettext_lazy as _
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = environ.get('DJANGO_SECRET')
 
-DEBUG = False
+DEBUG = 1
 
 if DEBUG:
     ALLOWED_HOSTS = ['*', ]
@@ -13,6 +14,7 @@ else:
     ALLOWED_HOSTS = ['vladrunk.tech', 'www.vladrunk.tech', ]
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -27,6 +29,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -77,7 +80,18 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGE_CODE = 'ru'
+LANGUAGE_CODE = 'en-us'
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en-us'
+
+LANGUAGES = (
+    ('en-us', _('English')),
+    ('ru', _('Russian')),
+)
+
+LOCALE_PATHS = (
+    BASE_DIR / 'locale',
+)
 
 TIME_ZONE = 'Europe/Kiev'
 
