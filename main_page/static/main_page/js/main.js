@@ -40,6 +40,12 @@ $(document).ready(function($) {
         $('.profile-image').css('cursor', 'default');
     }
 
+    /*======= I18N Buttons =======*/
+    let lang_enable = $('.lang-enable');
+    lang_enable.on('click', function () {
+        document.cookie = 'lang=' + $(this).data('lang') + '; Max-Age=2592000; Path=/; SameSite=Lax';
+        document.location.reload();
+    });
     /*======= GitHub Calendar =======*/
     GitHubCalendar(".github-calendar", "vladrunk", { responsive: true });
 

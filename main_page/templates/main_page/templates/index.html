@@ -31,6 +31,22 @@
                     <i class="far fa-envelope-open"></i>{% translate "MAIL" %}
                 </a>
             </div> <!--//buttons visible on mobile-->
+
+            <div class="lang-chooser pull-right hidden-sm hidden-xs">
+                <img
+                        alt="English"
+                        class="lang-{% if browse_lang == 'en-us' %}disable{% else %}enable{% endif %}"
+                        src="https://cdn2.iconfinder.com/data/icons/flags/flags/48/united-states-of-america-usa.png"
+                        data-lang="en-us"
+                >
+                <img
+                        alt="Русский"
+                        class="lang-{% if browse_lang == 'ru' %}disable{% else %}enable{% endif %}"
+                        src="https://cdn2.iconfinder.com/data/icons/flags/flags/48/Russian-Federation.png"
+                        data-lang="ru"
+                >
+            </div><!--//lang-chooser-->
+
             <div class="info pull-right hidden-sm hidden-xs">
                     <div class="section-inner">
                         <h2 class="heading sr-only">{% translate "Basic Information" %}</h2>
