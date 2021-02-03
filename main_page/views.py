@@ -35,5 +35,5 @@ def index(req):
         else:
             context = {}
         response = render(req, 'main_page/templates/index.html', context)
-    response.set_cookie(key='lang', value=lang, samesite='Lax', max_age=60*60*24*31, path='/', )
+    response.set_cookie(key='lang', value=lang, samesite='Lax', max_age=60*60*24*30, path='/', )
     return response
