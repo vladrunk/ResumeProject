@@ -84,7 +84,7 @@ $(document).ready(function($) {
       node.textContent = text;
       return text;
     }
-
+    
     toggleMenuState(className) {
 
       let state;
@@ -94,6 +94,12 @@ $(document).ready(function($) {
       }
 
       state = this.changeState(this.state);
+
+      if (state) {
+          document.querySelector('body').style.overflow = 'hidden';
+      } else {
+          document.querySelector('body').style.overflow = 'auto';
+      }
 
       this.changeStateText(state, this.menuStateTextNode);
       this.menuNode.classList.toggle(className);
