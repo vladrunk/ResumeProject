@@ -4,14 +4,14 @@
 {% block title %}{% translate fio %}{% endblock %}
 
 {% block body %}
-    <!-- ******HEADER****** -->
+    {# header #}
     <header class="header">
         <div class="container">
             <div class="profile-image-wrapper">
                 <img class="profile-image img-responsive pull-left"
-                     src="{{ profile_image }}"
-                     alt="¯\_(ツ)_/¯"
-                />
+                    src="{{ profile_image }}"
+                    alt="¯\_(ツ)_/¯"
+                    />
             </div>
             <div class="profile-content pull-left">
                 <h1 class="name">{% translate fio %}</h1>
@@ -22,56 +22,59 @@
                     <li><a href="https://www.linkedin.com/in/{{ linkedin }}" target="_blank"><i class="fab fa-linkedin fa-fw"></i></a></li>
                     <li class="last-item"><a href="https://github.com/{{ git }}" target="_blank"><i class="fab fa-github-alt fa-fw"></i></a></li>
                 </ul>
-            </div><!--//profile-->
-            <div class="center-block hidden-md hidden-lg"> <!--//btns visible on mobile-->
+            </div>
+            {# profile #}
+            <div class="center-block hidden-md hidden-lg">
                 <a class="btn btn-lg btn-success" href="tel:{{ phone }}" target="_blank">
-                    <i class="fas fa-phone-square-alt"></i>{% translate "PHONE" %}
+                <i class="fas fa-phone-square-alt"></i>{% translate "PHONE" %}
                 </a>
                 <a class="btn btn-lg btn-success" href="mailto:{{ email }}" target="_blank">
-                    <i class="far fa-envelope-open"></i>{% translate "MAIL" %}
+                <i class="far fa-envelope-open"></i>{% translate "MAIL" %}
                 </a>
-            </div> <!--//buttons visible on mobile-->
-
-            <div class="lang-chooser pull-right hidden-sm hidden-xs">
-                <img
-                        alt="English"
-                        class="lang-{% if browse_lang == 'en-us' %}disable{% else %}enable{% endif %}"
-                        src="https://cdn2.iconfinder.com/data/icons/flags/flags/48/united-states-of-america-usa.png"
-                        data-lang="en-us"
-                >
-                <img
-                        alt="Русский"
-                        class="lang-{% if browse_lang == 'ru' %}disable{% else %}enable{% endif %}"
-                        src="https://cdn2.iconfinder.com/data/icons/flags/flags/48/Russian-Federation.png"
-                        data-lang="ru"
-                >
-            </div><!--//lang-chooser-->
-
+            </div>
+            {# buttons visible on mobile #}
             <div class="info pull-right hidden-sm hidden-xs">
-                    <div class="section-inner">
-                        <h2 class="heading sr-only">{% translate "Basic Information" %}</h2>
-                        <div class="content">
-                            <ul class="list-unstyled">
-                                <li><i class="fa fa-map-marker"></i>
-                                    <span class="sr-only">Location:</span>
-                                    <a href="https://goo.gl/maps/5WJNsj3mBZHcFHJy9" target="_blank">
-                                        {% translate "Odessa, UA" %}
-                                    </a>
-                                </li>
-                                <li><i class="far fa-envelope-open"></i>
-                                    <span class="sr-only">Email:</span>
-                                    <a href="mailto:{{ email }}">{{ email }}</a>
-                                </li>
-                                <li><i class="fas fa-phone-square-alt"></i>
-                                    <span class="sr-only">{% translate "Phone" %}:</span>
-                                    <a class="nolink">{{ phone }}</a>
-                                </li>
-                            </ul>
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </div><!--//info div-->
-        </div><!--//container-->
-    </header><!--//header-->
+                <div class="section-inner">
+                    <h2 class="heading sr-only">{% translate "Basic Information" %}</h2>
+                    <div class="content">
+                        <ul class="list-unstyled">
+                            <li><i class="fa fa-map-marker"></i>
+                                <span class="sr-only">Location:</span>
+                                <a href="https://goo.gl/maps/5WJNsj3mBZHcFHJy9" target="_blank">
+                                {% translate "Odessa, UA" %}
+                                </a>
+                            </li>
+                            <li><i class="far fa-envelope-open"></i>
+                                <span class="sr-only">Email:</span>
+                                <a href="mailto:{{ email }}">{{ email }}</a>
+                            </li>
+                            <li><i class="fas fa-phone-square-alt"></i>
+                                <span class="sr-only">{% translate "Phone" %}:</span>
+                                <a class="nolink">{{ phone }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    {# content #}
+                </div>
+                {# section-inner #}
+            </div>
+            {# info div #}
+        </div>
+        {# container #}
+    </header>
+    {# coffee #}
+    <div class="coffee hidden-sm hidden-xs">
+      <div class="tasse">
+        <div class="smoke">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="griff"></div>
+        <div class="untertasse"></div>
+      </div>
+    </div>
+    {# site content #}
     <div class="container sections-wrapper">
         <div class="row">
             <div class="primary col-md-8 col-sm-12 col-xs-12">
@@ -80,85 +83,99 @@
                         <h2 class="heading">{% translate "About me" %}</h2>
                         <div class="content">
                             <p>{% translate about %}</p>
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </section><!--//about section-->
-
+                        </div>
+                        {# content #}
+                    </div>
+                    {# section-inner #}
+                </section>
+                {# about section #}
                 <section class="experience section">
                     <div class="section-inner">
                         <h2 class="heading">{% translate "Work experience" %}</h2>
                         <div class="content">
-                        {% for work in work_exp.all %}
+                            {% for work in work_exp.all %}
                             <div class="item">
                                 <h3 class="title">{% translate work.position %} -
                                     <span class="place">
-                                        <a {% if work.link %}
-                                            href="{% translate work.link %}" target="_blank"
-                                        {% else %}
-                                            class="nolink"
-                                        {% endif %}>{% translate work.company %}</a>
+                                    <a {% if work.link %}
+                                    href="{% translate work.link %}" target="_blank"
+                                    {% else %}
+                                    class="nolink"
+                                    {% endif %}>{% translate work.company %}</a>
                                     </span>
                                     <span class="year"> ({{ work.year_start }} - {{ work.year_end }})</span>
                                 </h3>
                                 <p>{% translate work.essentials %}</p>
-                            </div><!--//item-->
-                        {% endfor %}
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </section><!--//experience section-->
-
+                            </div>
+                            {# item #}
+                            {% endfor %}
+                        </div>
+                        {# content #}
+                    </div>
+                    {# section-inner #}
+                </section>
+                {# experience section #}
                 <section class="github section desktop visible-md visible-lg hidden-xs hidden-sm">
                     <div class="section-inner">
                         <h2 class="heading hidden-sm hidden-xs">{% translate "GitHub Activity" %}</h2>
                         <div id="github-graph" class="github-graph">
                             <div class="github-calendar">
                             </div>
-                        </div><!--//github-graph-->
-                    </div><!--//secton-inner-->
-                </section><!--//github section-->
-
+                        </div>
+                        {# github-graph #}
+                    </div>
+                    {# section-inner #}
+                </section>
+                {# github section desktop #}
                 <section class="github section mobile visible-xs visible-sm hidden-md hidden-lg">
                     <div class="section-inner">
                         <h2 class="heading">{% translate "GitHub Repos" %}</h2>
-                        <div class="github-widget" data-username="{{ git }}"></div><!--//github-graph-->
-                    </div><!--//secton-inner-->
-                </section><!--//github section-->
-            </div><!--//primary-->
+                        <div class="github-widget" data-username="{{ git }}"></div>
+                        {# github-widget #}
+                    </div>
+                    {# section-inner #}
+                </section>
+                {# github section mobile #}
+            </div>
+            {# primary #}
             <div class="secondary col-md-4 col-sm-12 col-xs-12">
-
-               <aside class="skills aside section">
+                <aside class="skills aside section">
                     <div class="section-inner">
                         <h2 class="heading">{% translate "Skills" %}</h2>
                         <div class="content">
                             <div class="skillset">
-                            {% for skill in skills.all %}
+                                {% for skill in skills.all %}
                                 <div class="item">
                                     <h3 class="level-title">
                                         {{ skill.title }}
                                         <span class="level-label" data-toggle="tooltip" data-placement="left" data-animation="true" title="">
-                                            {% if skill.level < 30  %}
-                                                {% translate "Beginner" %}
-                                            {% elif skill.level < 60 %}
-                                                {% translate "Middle" %}
-                                            {% elif skill.level < 90 %}
-                                                {% translate "Senior" %}
-                                            {% else %}
-                                                {% translate "Pro" %}
-                                            {% endif %}
+                                        {% if skill.level < 30  %}
+                                        {% translate "Beginner" %}
+                                        {% elif skill.level < 60 %}
+                                        {% translate "Middle" %}
+                                        {% elif skill.level < 90 %}
+                                        {% translate "Senior" %}
+                                        {% else %}
+                                        {% translate "Pro" %}
+                                        {% endif %}
                                         </span>
                                     </h3>
                                     <div class="level-bar">
                                         <div class="level-bar-inner" data-level="{{ skill.level }}%">
                                         </div>
-                                    </div><!--//level-bar-->
-                                </div><!--//item-->
-                            {% endfor %}
+                                    </div>
+                                    {# level-bar #}
+                                </div>
+                                {# item #}
+                                {% endfor %}
                             </div>
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//skills section-->
-
-               <aside class="education aside section">
+                        </div>
+                        {# content #}
+                    </div>
+                    {# section-inner #}
+                </aside>
+                {# skills section #}
+                <aside class="education aside section">
                     <div class="section-inner">
                         <h2 class="heading">{% translate "Education" %}</h2>
                         <div class="content">
@@ -170,82 +187,119 @@
                                 <h4 class="university">{% translate edu.university %}
                                     <span class="year"> ({{ edu.year_start }}-{{ edu.year_end }})</span>
                                 </h4>
-                            </div><!--//item-->
+                            </div>
+                            {# item #}
                             {% endfor %}
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//education section-->
-
-               <aside class="languages aside section">
+                        </div>
+                        {# content #}
+                    </div>
+                    {# section-inner #}
+                </aside>
+                {# education section #}
+                <aside class="languages aside section">
                     <div class="section-inner">
                         <h2 class="heading">{% translate "Languages" %}</h2>
                         <div class="content">
                             <ul class="list-unstyled">
-                            {% for lang in langs.all %}
+                                {% for lang in langs.all %}
                                 <li class="item">
                                     <span class="title"><strong>{% translate lang.title %}:</strong></span>
                                     <span class="level">
                                     {% if lang.level >= 5 %}
-                                        {% translate "Native Speaker" %}
+                                    {% translate "Native Speaker" %}
                                     {% elif lang.level >= 4 %}
-                                        {% translate "Fluent" %}
+                                    {% translate "Fluent" %}
                                     {% elif lang.level >= 3 %}
-                                        {% translate "Advanced" %}
+                                    {% translate "Advanced" %}
                                     {% elif lang.level >= 2 %}
-                                         {% translate "Technical Documentation" %}
+                                    {% translate "Technical Documentation" %}
                                     {% else %}
-                                        {% translate "Basic" %}
+                                    {% translate "Basic" %}
                                     {% endif %}
-                                        <br class="visible-own visible-sm visible-xs"/>
+                                    <br class="visible-own visible-sm visible-xs"/>
                                     {% with ''|center:lang.max_level as range %}
                                     {% for _ in range %}
-                                        {% with lang.level|sub:forloop.counter as dif %}
-                                        {% if dif.real == -0.5 %}
-                                            <i class="fas fa-star-half-alt"></i>
-                                        {% elif dif >= 0 %}
-                                            <i class="fas fa-star"></i>
-                                        {% else %}
-                                            <i class="far fa-star"></i>
-                                        {% endif %}
-                                        {% endwith %}
+                                    {% with lang.level|sub:forloop.counter as dif %}
+                                    {% if dif.real == -0.5 %}
+                                    <i class="fas fa-star-half-alt"></i>
+                                    {% elif dif >= 0 %}
+                                    <i class="fas fa-star"></i>
+                                    {% else %}
+                                    <i class="far fa-star"></i>
+                                    {% endif %}
+                                    {% endwith %}
                                     {% endfor %}
                                     {% endwith %}
                                     </span>
-                                </li><!--//item-->
-                            {% endfor %}
+                                </li>
+                                {# item #}
+                                {% endfor %}
                             </ul>
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-               </aside><!--//languages section-->
-
-               <aside class="list music aside section">
+                        </div>
+                        {# content #}
+                    </div>
+                    {# section-inner #}
+                </aside>
+                {# languages section #}
+                <aside class="list music aside section">
                     <div class="section-inner">
                         <h2 class="heading">{% translate "Favourite coding music" %}</h2>
                         <div class="content">
                             <ul class="list-unstyled">
-                            {% for music in musics.all %}
+                                {% for music in musics.all %}
                                 <li>
                                     <i class="fa fa-headphones"> </i>
                                     <a href="{{ music.link }}" target="_blank">{% translate music.title %}</a>
                                 </li>
-                            {% endfor %}
+                                {% endfor %}
                             </ul>
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-               </aside><!--//list music section-->
-
-            </div><!--//secondary-->
-        </div><!--//row-->
+                        </div>
+                        {# content #}
+                    </div>
+                    {# section-inner #}
+                </aside>
+                {# list music section #}
+            </div>
+            {# secondary #}
+        </div>
+        {# row #}
     </div>
+    {# easter egg #}
     <div class="toasty-ee">
         <img src="{% static 'main_page/images/ee/toasty.png' %}" alt="">
     </div>
-    <!-- Javascript -->
+    {# Mobile Menu #}
+    <div class="mobile-menu">
+        <nav class="mobile-menu__nav">
+            <ul class="mobile-menu__list r-list">
+                <li class="mobile-menu__group">
+                    <a {#href="ru/"#}
+                       class="mobile-menu__link r-link {% if browse_lang == 'ru' %}{% else %}lang-enable{% endif %}"
+                       data-lang="ru"
+                    >Русский</a>
+                </li>
+                <li class="mobile-menu__group">
+                    <a {#href="/"#}
+                       class="mobile-menu__link r-link {% if browse_lang == 'en-us' %}{% else %}lang-enable{% endif %}"
+                       data-lang="en-us"
+                    >English</a>
+                </li>
+            </ul>
+        </nav>
+        <button class="mobile-menu__toggle r-button" type="button">
+            <span class="mobile-menu__hamburger mobile-m-hamburger">
+                <span class="mobile-m-hamburger__label">
+                    <span class="mobile-menu__screen-reader screen-reader">Open menu</span>
+                </span>
+            </span>
+        </button>
+    </div>
+    {# Javascript #}
     <script type="text/javascript" src="{% static 'main_page/plugins/jquery-1.11.3.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'main_page/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
-    <!-- github activity plugin -->
+    {# github activity plugin #}
     <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
     <script src="{% static 'main_page/plugins/github-card-widget/github-card-widget.js' %}"></script>
-    <!-- custom js -->
+    {# custom js #}
     <script type="text/javascript" src="{% static 'main_page/js/main.js' %}"></script>
 {% endblock %}

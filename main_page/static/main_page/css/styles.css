@@ -1,4 +1,4 @@
-/* ======= Base ======= */
+/* ======= Основные ======= */
 body {
   font-family: 'Lato', arial, sans-serif;
   color: #434343;
@@ -65,7 +65,8 @@ a.dotted-link:hover {
   text-decoration: none;
   color: #49515a;
 }
-/* ======= Header ======= */
+
+/* ======= Хедер ======= */
 .header {
   padding: 30px 0;
   background: #f5f5f5;
@@ -124,6 +125,7 @@ a.dotted-link:hover {
   padding-top: 8px;
 }
 
+/* ======= Выбор языка ======= */
 .lang-chooser {
   margin-top: -60px;
   transition: margin-top .5s ease-in-out;
@@ -136,16 +138,16 @@ a.dotted-link:hover {
   width: 65%;
 }
 .lang-chooser .lang-enable {
-  display: inline;
+  /*display: inline;*/
 }
 .lang-chooser .lang-disable {
-  display: none;
+  /*display: none;*/
 }
 
-/* ======= Sections======= */
+/* ======= Секции ======= */
 .sections-wrapper {
   padding-top: 60px;
-  padding-bottom: 60px;
+  padding-bottom: 10px;
 }
 .section {
   margin-bottom: 30px;
@@ -164,99 +166,8 @@ a.dotted-link:hover {
   margin-right: 5px;
   font-size: 14px;
 }
-/* About Section */
-/* Latest Section */
-.latest .item {
-  margin-bottom: 30px;
-}
-.latest .item .title {
-  font-size: 18px;
-  margin-top: 0;
-}
-.latest .item .title .label {
-  margin-left: 5px;
-  font-size: 12px;
-}
-.latest .item .title a {
-  color: #778492;
-}
-.latest .item .title a:hover {
-  color: #5f6b77;
-}
-.latest .item .project-image:hover {
-  -webkit-opacity: 0.8;
-  -moz-opacity: 0.8;
-  opacity: 0.8;
-}
-.latest .divider {
-  margin-bottom: 60px;
-}
-.latest .featured {
-  margin-bottom: 60px;
-}
-.latest .featured .title {
-  margin-bottom: 5px;
-  font-size: 20px;
-}
-.latest .featured .summary {
-  margin-bottom: 30px;
-  color: #778492;
-}
-.latest .featured img {
-  margin-bottom: 30px;
-}
-.latest .featured .desc {
-  margin-bottom: 30px;
-}
-.latest .featured-image {
-  position: relative;
-}
-.latest .featured-image .text {
-  background: #3AAA64;
-  color: #fff;
-}
-.latest .featured-image .ribbon {
-  position: absolute;
-  top: -4px;
-  right: -4px;
-  width: 110px;
-  height: 110px;
-  overflow: hidden;
-}
-.latest .featured-image .ribbon .text {
-  font-family: 'Montserrat', sans-serif;
-  position: relative;
-  left: -8px;
-  top: 18px;
-  width: 158px;
-  padding: 10px 10px;
-  font-size: 15px;
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-  color: #fff;
-  background-color: #479FC8;
-  -webkit-transform: rotate(45deg) translate3d(0, 0, 0);
-  -moz-transform: rotate(45deg) translate3d(0, 0, 0);
-  -ms-transform: rotate(45deg) translate3d(0, 0, 0);
-  -o-transform: rotate(45deg) translate3d(0, 0, 0);
-}
-.latest .featured-image .ribbon .text:before,
-.latest .featured-image .ribbon .text:after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  border-top: 5px solid #276582;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-}
-.latest .featured-image .ribbon .text:before {
-  left: 0;
-}
-.latest .featured-image .ribbon .text:after {
-  right: 0;
-}
-/* Projects Section */
+
+/* ======= Проекты ======= */
 .projects .item {
   margin-bottom: 30px;
 }
@@ -272,7 +183,8 @@ a.dotted-link:hover {
 .projects .item .title a:hover {
   color: #5f6b77;
 }
-/* Work Section */
+
+/* ======= Опыт работы ======= */
 .experience .item {
   margin-bottom: 30px;
 }
@@ -299,14 +211,8 @@ a.dotted-link:hover {
   color: #999;
   font-weight: normal;
 }
-/* Git section */
-.github-graph {
-  margin-bottom: 30px;
-}
-.github-graph .js-calendar-graph-svg {
-  max-width: 100%;
-}
-/* Info Section */
+
+/* ======= Информация ======= */
 .info {
   margin-top: 60px;
   padding-right: 100px;
@@ -330,7 +236,8 @@ a.dotted-link:hover {
 .info li:last-child {
   margin-bottom: 0;
 }
-/* Skills Section */
+
+/* ======= Навыки ======= */
 .skills .intro {
   margin-bottom: 30px;
 }
@@ -360,7 +267,8 @@ a.dotted-link:hover {
   height: 15px;
   background: #66cb8c;
 }
-/* Education section */
+
+/* ======= Образование ======= */
 .education .item {
   margin-bottom: 30px;
 }
@@ -382,7 +290,8 @@ a.dotted-link:hover {
   color: #b0b7bf;
   font-weight: 500;
 }
-/* Language Section */
+
+/* ======= Языки ======= */
 .languages .item {
   margin-bottom: 15px;
 }
@@ -399,7 +308,8 @@ a.dotted-link:hover {
 .languages .item .fas {
   color: #79d19a;
 }
-/* List section */
+
+/* ======= Списки ======= */
 .list ul li {
   margin-bottom: 10px;
 }
@@ -413,6 +323,7 @@ a.dotted-link:hover {
   color: #49515a;
 }
 
+/* ======= Перекрытие текста без ссылок ======= */
 .nolink {
   cursor: default;
 }
@@ -420,6 +331,7 @@ a.nolink:hover{
   text-decoration: none;
 }
 
+/* ======= Пасхалка ======= */
 .toasty-ee{
   display: block;
   position: absolute;
@@ -428,8 +340,91 @@ a.nolink:hover{
   top: -300px;
 }
 
-/* Extra small devices (phones, less than 768px) */
-@media (max-width: 767px) {
+/* ======= coffee ======= */
+.coffee {
+	height: 40px;
+	width: 55px;
+	margin-top: 5px;
+	margin-bottom: -50px;
+	margin-left: 50%;
+}
+.tasse {
+	background-color: #b0b7bf;
+	border: 2.5px solid #778492;
+	height: 100%;
+	width: 100%;
+	border-radius: 0 0 2rem 2rem;
+	position: relative;
+	margin: 0 auto;
+}
+.tasse .griff {
+	position: absolute;
+	height: 37%;
+	width: 26%;
+	background: #b0b7bf;
+	border-radius: 100%;
+	left: 100%;
+	top: 10%;
+	z-index: -1;
+	border: 2px solid #778492;
+}
+.tasse .untertasse {
+	z-index: 9;
+	position: absolute;
+	bottom: -4px;
+	width: 100%;
+	left: 0;
+	right: 0;
+	height: 8%;
+	border-radius: 0 0 1rem 1rem;
+	background-color: #b0b7bf;
+	margin: 0 auto;
+}
+.tasse .smoke span {
+	width: 2px;
+	height: 25px;
+	background-color: #62666a;
+	position: absolute;
+	top: -40px;
+	left: 15%;
+	opacity: 0;
+	animation-name: fader;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+}
+@keyframes fader {
+  0% {
+    top: -40px;
+    opacity: 0
+  }
+  50% {
+    opacity: 0.2
+  }
+  100% {
+    top: -60px;
+    opacity: 0
+  }
+}
+.tasse .smoke span:nth-child(2) {
+	left: 50%;
+	height: 20px;
+	animation-duration: 2.9s;
+	animation-delay: .1s;
+}
+.tasse .smoke span:nth-child(3) {
+	left: 85%;
+	height: 28px;
+	animation-duration: 2.8s;
+	animation-delay: .2s;
+}
+/* ======= Меню ======= */
+.mobile-menu{
+  display: none;
+}
+
+/* ======= Для экранов меньше 991 ======= */
+@media (max-width: 991px) {
+  /*Сдвигаем хедер в центр и контент хедера*/
   .header {
     text-align: center;
   }
@@ -442,36 +437,342 @@ a.nolink:hover{
     text-align: center;
   }
   .header .btn {
-    margin-top: 5px;
     float: none !important;
+    margin-top: 5px;
   }
   .project-image {
     margin-bottom: 15px;
   }
+  /*Скрываем кнопку выбора языка*/
   .lang-chooser {
     display: none;
   }
-  .lang-chooser:hover {
-    margin-top: -446.6px;
+  /* ======= Меню ======= */
+  /* ======= ЗАКЛЮЧЕНИЯ ======= */
+  /* Компонент сбросит стили браузера кнопки */
+  .r-button{
+    --uirButtonBackgroundColor: transparent;
+    --uirButtonPadding: var(--rButtonPaddingTop, 0) 0 0 0;
+    --uirButtonBorderWidth: 0;
+    --uirButtonBorderStyle: solid;
+    --uirButtonBorderColor: currentColor;
+    --uirButtonFontFamily: inherit;
+    --uirButtonFontSize: inherit;
+
+    background-color: var(--uirButtonBackgroundColor);
+    padding: var(--uirButtonPadding);
+
+    border-width: var(--uirButtonBorderWidth);
+    border-style: var(--uirButtonBorderStyle);
+    border-color: var(--uirButtonBorderColor);
+
+    cursor: pointer;
+
+    font-family: var(--uirButtonFontFamily);
+    font-size: var(--uirButtonFontSize);
   }
-  .lang-chooser img {
-    width: 85%;
+  .r-button::-moz-focus-inner,
+  .r-button[type="button"]::-moz-focus-inner,
+  .r-button[type="reset"]::-moz-focus-inner,
+  .r-button[type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+  /* Компонент сбросит стили ссылки браузера */
+  .r-link{
+      --uirLinkDisplay: inline-flex;
+      --uirLinkTextColor: var(
+              --rLinkTextColor
+      );
+      --uirLinkTextDecoration: none;
+      display: var(
+              --uirLinkDisplay
+      ) !important;
+      color: var(
+              --uirLinkTextColor
+      ) !important;
+      text-decoration: var(
+              --uirLinkTextDecoration
+      ) !important;
+  }
+  /* Компонент сбросит стили списка браузера */
+  .r-list{
+      --uirListPaddingLeft: 0;
+      --uirListMarginTop: 0;
+      --uirListMarginBottom: 0;
+      --uirListListStyle: none;
+      padding-left: var(
+              --uirListPaddingLeft
+      ) !important;
+      margin-top: var(
+              --uirListMarginTop
+      ) !important;
+      margin-bottom: var(
+              --uirListMarginBottom
+      ) !important;
+      list-style: var(
+              --uirListListStyle
+      ) !important;
+  }
+  /* Основные стили компонента для гамбургера */
+  .mobile-m-hamburger{
+    --uiMobileHamburgerThickness: var(
+            --mobile-hamburgerThickness,
+            4px
+    );
+    display: var(
+            --mobile-hamburgerDisplay,
+            inline-flex
+    );
+    width: var(
+            --mobile-hamburgerWidth,
+            28px
+    );
+    height: var(
+            --mobile-hamburgerHeight,
+            20px
+    );
+    position: relative;
+  }
+  .mobile-m-hamburger::before,
+  .mobile-m-hamburger::after,
+  .mobile-m-hamburger__label{
+    width: 100%;
+    height: var(
+            --uiMobileHamburgerThickness
+    );
+    border-radius: var(
+            --mobile-hamburgerBorderRadius,
+            5px
+    );
+    background-color: var(
+            --mobile-hamburgerBackgroundColor,
+            currentColor
+    );
+    position: absolute;
+    left: 0;
+  }
+  .mobile-m-hamburger::before,
+  .mobile-m-hamburger::after{
+    content:"";
+  }
+  .mobile-m-hamburger::before{
+    top: 0;
+  }
+  .mobile-m-hamburger::after{
+    bottom: 0;
+  }
+  .mobile-m-hamburger__label{
+    /* Расчет среднего положения кнопки для гамбургера */
+    top: calc(50% - calc(var(--uiMobileHamburgerThickness) / 2));
+  }
+  /* помощник для сокрытия элементов, которые доступны только для экранного считывателя */
+  .screen-reader{
+    width: 1px !important;
+    height: 1px !important;
+    padding:  0 !important;
+    border:  none !important;
+    position:  absolute !important;
+    clip:  rect(1px, 1px, 1px, 1px) !important;
+    overflow: hidden !important;
+  }
+  /* ======= СТИЛИ МЕНЮ ======= */
+  .mobile-menu{
+    --uiMobileMenuCircleSize: var(
+            --mobile-menuCircleSize,
+            6.25rem
+    );
+    --uiMobileMenuCircleOffset: var(
+            --mobile-menuCircleOffset,
+            1rem
+    );
+    --uiMobileMenuCircleHeight: calc(
+            var(
+            --uiMobileMenuCircleSize
+            ) / 2
+    );
+    --uiMobileMenuCircleBackgroundColor: var(
+            --mobile-menuCircleBackgroundColor
+    );
+    --uiMobileMenuHamburgerWidth: var(
+            --mobile-menuHamburgerWidth,
+            1.75rem
+    );
+    --uiMobileMenuHamburgerHeight: var(
+            --mobile-menuHamburgerHeight,
+            1.25rem
+    );
+    --rButtonPaddingTop: calc(
+            var(
+            --uiMobileMenuCircleHeight
+            ) - var(
+            --uiMobileMenuHamburgerHeight
+            ) - var(
+            --uiMobileMenuCircleOffset
+            )
+    );
+    --mobile-hamburgerWidth: var(
+            --uiMobileMenuHamburgerWidth
+    );
+    --mobile-hamburgerHeight: var(
+            --uiMobileMenuHamburgerHeight
+    );
+    --mobile-hamburgerBackgroundColor: var(
+            --mobile-menuHamburgerBackgroundColor,
+            #fff
+    );
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9998;
+  }
+  .mobile-menu__nav{
+    box-sizing: border-box;
+    width: 100%;
+    height: 0;
+    transition: opacity .2s ease-out;
+    opacity: 0;
+    display: flex;
+    align-items: flex-end;
+    z-index: 2;
+  }
+  .mobile-menu__list{
+    width: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .mobile-menu__toggle{
+    box-sizing: border-box;
+    width: var(--uiMobileMenuCircleSize);
+    height: var(--uiMobileMenuCircleHeight);
+    flex: none;
+    position: relative;
+    z-index: 0;
+  }
+  .mobile-menu__toggle::before{
+    /*
+    1. The font-size property is used to simplify calculations of the element's sizes and position
+    2. The negative value for the bottom property need for hiding half of circle.
+    */
+    content: "";
+    width: 1em;
+    height: 1em;
+    font-size: var(
+            --uiMobileMenuCircleSize
+    ); /* 1 */
+    background-color: var(
+            --uiMobileMenuCircleBackgroundColor
+    );
+    border-radius: 50%;
+    position: absolute;
+    bottom: -.5em; /* 2 */
+    left: calc(50% - .5em);
+    z-index: -1;
+    will-change: width, height;
+    transition: transform .25s cubic-bezier(0.04, -0.1, 0.29, 0.98),
+                width .25s cubic-bezier(0.04, -0.1, 0.29, 0.98),
+                height .25s cubic-bezier(0.04, -0.1, 0.29, 0.98);
+  }
+  /* стили анимации гамбургера */
+  .mobile-m-hamburger::before,
+  .mobile-m-hamburger::after,
+  .mobile-m-hamburger__label{
+    transition-timing-function: ease;
+    transition-duration: .15s;
+  }
+  .mobile-m-hamburger::before,
+  .mobile-m-hamburger::after{
+    transition-property: transform;
+  }
+  .mobile-m-hamburger__label{
+    transition-property: transform, opacity;
+  }
+  /* ======= МЕНЮ СОСТОЯНИЯ ======= */
+  .mobile-menu__toggle:focus{
+    outline: none;
+  }
+  .mobile-menu_activated{
+    height: 100%;
+  }
+  .mobile-menu_activated .mobile-menu__nav{
+    flex-grow: 1;
+    opacity: 1;
+    will-change: opacity;
+    transition-duration: .2s;
+    transition-delay: .3s;
+  }
+  .mobile-menu_activated .mobile-menu__toggle::before{
+    width: 100vmax;
+    height: 100vmax;
+    transform: translate3d(-50vh, -50vh, 0) scale(5);
+    transition-duration: 1s;
+  }
+  .mobile-menu:not(.mobile-menu_activated) .mobile-menu__list{
+    display: none;
+  }
+  .mobile-menu_activated .mobile-m-hamburger::before{
+    top: 50%;
+    transform: translate3d(0, -50%, 0) rotate(45deg);
+  }
+  .mobile-menu_activated .mobile-m-hamburger::after{
+    transform: translate3d(0, -50%, 0) rotate(135deg);
+    top: 50%;
+  }
+  .mobile-menu_activated .mobile-m-hamburger__label{
+    transform: rotate(-45deg) translate3d(-.285em,-.3em, 0);
+    opacity: 0;
+  }
+  /* ======= НАСТРОЙКИ МЕНЮ ======= */
+  :root{
+    --colorWhite: #dae3e7;
+    --colorMain: #778492;
+    --mobile-menuCircleSize: 7rem;
+    --mobile-menuCircleOffset: 0.7rem;
+    --mobile-menuHamburgerWidth: 2.7rem;
+    --mobile-menuHamburgerHeight: 2rem;
+    --mobile-menuCircleBackgroundColor: var(--colorMain);
+    --mobile-menuHamburgerBackgroundColor: var(--colorWhite);
+    --mobile-menuHaburgerOutlineColor: var(--colorMain);
+    --mobile-hamburgerThickness: 4px;
+    --mobile-hamburgerDisplay: inline-flex;
+    --mobile-hamburgerBorderRadius: 5px;
+  }
+  .mobile-menu_activated{
+    --mobile-menuHaburgerOutlineColor: var(--colorWhite);
+  }
+  /* ======= ПУНКТЫ МЕНЮ ======= */
+  .mobile-menu__group{
+    --rLinkTextColor: var(
+            --colorWhite
+    );
+    padding: .5rem 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .mobile-menu__link {
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
   }
 }
-/* Small devices (tablets, 768px and up) */
-/* Medium devices (desktops, 992px and up) */
-/* Large devices (large desktops, 1200px and up) */
-/* Ex-Large devices (large desktops, 1200px and up) */
+/* ======= Для экранов больше 1400 ======= */
 @media (min-width: 1400px) {
   .container {
     width: 1360px;
   }
 }
+/* ======= Для экранов меньше 1400 ======= */
 @media (max-width: 1400px) {
   .visible-own {
     display: block !important;
   }
 }
+/* ======= Для экранов меньше 1200 ======= */
 @media (max-width: 1200px) {
   .info {
     padding-right: 50px;

@@ -1,10 +1,10 @@
 {% load static %}<!DOCTYPE html>
 <html lang="{{ browse_lang }}">
 <head>
-    <!-- Meta -->
+    {# Meta #}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link
             href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic'
             rel='stylesheet'
@@ -15,19 +15,19 @@
             rel='stylesheet'
             type='text/css'
     >
-    <!-- favicon -->
+    {# favicon #}
     <link rel="icon" type="image/svg" href="{% static 'main_page/images/favicon/favicon.svg' %}">
-    <!-- Global CSS -->
+    {# Global CSS #}
     <link rel="stylesheet" href="{% static 'main_page/plugins/bootstrap/css/bootstrap.min.css' %}">
-    <!-- Plugins CSS -->
+    {# Plugins CSS #}
     <link rel="stylesheet" href="{% static 'main_page/plugins/font-awesome/css/all.min.css' %}">
-    <!-- github calendar css -->
+    {# github calendar css #}
     <link rel="stylesheet"
           href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css">
-    <!-- github card widget css -->
+    {# github card widget css #}
     <link rel="stylesheet"
           href="{% static 'main_page/plugins/github-card-widget/github-card-widget.css' %}">
-    <!-- Theme CSS -->
+    {# Theme CSS #}
     <link id="theme-style" rel="stylesheet"
           href="{% static 'main_page/css/styles.css' %}">
     <title>{% block title %}{% endblock %}</title>
