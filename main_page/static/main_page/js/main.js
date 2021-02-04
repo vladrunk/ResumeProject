@@ -95,6 +95,12 @@ $(document).ready(function($) {
 
       state = this.changeState(this.state);
 
+      if (state) {
+          document.querySelector('body').style.overflow = 'hidden';
+      } else {
+          document.querySelector('body').style.overflow = 'auto';
+      }
+
       this.changeStateText(state, this.menuStateTextNode);
       this.menuNode.classList.toggle(className);
 
@@ -112,4 +118,11 @@ $(document).ready(function($) {
   }
 
   jsMenuNode.querySelector('.mobile-menu__toggle').addEventListener('click', callMenuToggle);
+
+  let menu_links = jsMenuNode.querySelectorAll('.h-link');
+  [].forEach.call(menu_links, function (menu_link) {
+      menu_link.addEventListener('click', callMenuToggle);
+  });
+
+
 })();

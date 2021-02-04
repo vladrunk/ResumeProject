@@ -15,6 +15,7 @@ def index(req):
         user = User.objects.filter(id=1)[0]
         if user:
             context = {
+                'req': req,
                 'browse_lang': req.LANGUAGE_CODE,
                 'profile_image': user.avatar.url,
                 'fio': f'{user.first_name} {user.last_name}',

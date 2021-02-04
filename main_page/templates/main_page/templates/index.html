@@ -78,7 +78,7 @@
     <div class="container sections-wrapper">
         <div class="row">
             <div class="primary col-md-8 col-sm-12 col-xs-12">
-                <section class="about section">
+                <section id="anchor-about-me" class="about section">
                     <div class="section-inner">
                         <h2 class="heading">{% translate "About me" %}</h2>
                         <div class="content">
@@ -89,7 +89,7 @@
                     {# section-inner #}
                 </section>
                 {# about section #}
-                <section class="experience section">
+                <section id="anchor-work-exp" class="experience section">
                     <div class="section-inner">
                         <h2 class="heading">{% translate "Work experience" %}</h2>
                         <div class="content">
@@ -115,7 +115,7 @@
                     {# section-inner #}
                 </section>
                 {# experience section #}
-                <section class="github section desktop visible-md visible-lg hidden-xs hidden-sm">
+                <section id="anchor-git-desktop" class="github section desktop visible-md visible-lg hidden-xs hidden-sm">
                     <div class="section-inner">
                         <h2 class="heading hidden-sm hidden-xs">{% translate "GitHub Activity" %}</h2>
                         <div id="github-graph" class="github-graph">
@@ -127,7 +127,7 @@
                     {# section-inner #}
                 </section>
                 {# github section desktop #}
-                <section class="github section mobile visible-xs visible-sm hidden-md hidden-lg">
+                <section id="anchor-git-mobile" class="github section mobile visible-xs visible-sm hidden-md hidden-lg">
                     <div class="section-inner">
                         <h2 class="heading">{% translate "GitHub Repos" %}</h2>
                         <div class="github-widget" data-username="{{ git }}"></div>
@@ -139,7 +139,7 @@
             </div>
             {# primary #}
             <div class="secondary col-md-4 col-sm-12 col-xs-12">
-                <aside class="skills aside section">
+                <aside id="anchor-skills" class="skills aside section">
                     <div class="section-inner">
                         <h2 class="heading">{% translate "Skills" %}</h2>
                         <div class="content">
@@ -175,7 +175,7 @@
                     {# section-inner #}
                 </aside>
                 {# skills section #}
-                <aside class="education aside section">
+                <aside id="anchor-edu" class="education aside section">
                     <div class="section-inner">
                         <h2 class="heading">{% translate "Education" %}</h2>
                         <div class="content">
@@ -196,7 +196,7 @@
                     {# section-inner #}
                 </aside>
                 {# education section #}
-                <aside class="languages aside section">
+                <aside id="anchor-langs" class="languages aside section">
                     <div class="section-inner">
                         <h2 class="heading">{% translate "Languages" %}</h2>
                         <div class="content">
@@ -241,7 +241,7 @@
                     {# section-inner #}
                 </aside>
                 {# languages section #}
-                <aside class="list music aside section">
+                <aside id="anchor-music" class="list music aside section">
                     <div class="section-inner">
                         <h2 class="heading">{% translate "Favourite coding music" %}</h2>
                         <div class="content">
@@ -273,14 +273,49 @@
         <nav class="mobile-menu__nav">
             <ul class="mobile-menu__list r-list">
                 <li class="mobile-menu__group">
-                    <a {#href="ru/"#}
-                       class="mobile-menu__link r-link {% if browse_lang == 'ru' %}{% else %}lang-enable{% endif %}"
+                    <a class="mobile-menu__link r-link h-link"
+                       href="{{ req.path }}#anchor-about-me"
+                    >{% translate "About me" %}</a>
+                </li>
+                <li class="mobile-menu__group">
+                    <a class="mobile-menu__link r-link h-link"
+                       href="{{ req.path }}#anchor-work-exp"
+                    >{% translate "Work experience" %}</a>
+                </li>
+                <li class="mobile-menu__group">
+                    <a class="mobile-menu__link r-link h-link"
+                       href="{{ req.path }}#anchor-git-mobile"
+                    >{% translate "GitHub Repos" %}</a>
+                </li>
+                <li class="mobile-menu__group">
+                    <a class="mobile-menu__link r-link h-link"
+                       href="{{ req.path }}#anchor-skills"
+                    >{% translate "Skills" %}</a>
+                </li>
+                <li class="mobile-menu__group">
+                    <a class="mobile-menu__link r-link h-link"
+                       href="{{ req.path }}#anchor-edu"
+                    >{% translate "Education" %}</a>
+                </li>
+                <li class="mobile-menu__group">
+                    <a class="mobile-menu__link r-link h-link"
+                       href="{{ req.path }}#anchor-langs"
+                    >{% translate "Languages" %}</a>
+                </li>
+                <li class="mobile-menu__group">
+                    <a class="mobile-menu__link r-link h-link"
+                       href="{{ req.path }}#anchor-music"
+                    >{% translate "Favourite coding music" %}</a>
+                </li>
+                <li class="mobile-menu__group">
+                    <a
+                       class="mobile-menu__link r-link {% if browse_lang == 'ru' %}lang-disable{% else %}lang-enable{% endif %}"
                        data-lang="ru"
                     >Русский</a>
                 </li>
                 <li class="mobile-menu__group">
-                    <a {#href="/"#}
-                       class="mobile-menu__link r-link {% if browse_lang == 'en-us' %}{% else %}lang-enable{% endif %}"
+                    <a
+                       class="mobile-menu__link r-link {% if browse_lang == 'en-us' %}lang-disable{% else %}lang-enable{% endif %}"
                        data-lang="en-us"
                     >English</a>
                 </li>

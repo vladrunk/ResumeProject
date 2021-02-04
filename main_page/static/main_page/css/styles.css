@@ -125,25 +125,6 @@ a.dotted-link:hover {
   padding-top: 8px;
 }
 
-/* ======= Выбор языка ======= */
-.lang-chooser {
-  margin-top: -60px;
-  transition: margin-top .5s ease-in-out;
-}
-.lang-chooser:hover {
-  margin-top: -45px;
-}
-.lang-chooser img {
-  position: relative;
-  width: 65%;
-}
-.lang-chooser .lang-enable {
-  /*display: inline;*/
-}
-.lang-chooser .lang-disable {
-  /*display: none;*/
-}
-
 /* ======= Секции ======= */
 .sections-wrapper {
   padding-top: 60px;
@@ -443,10 +424,6 @@ a.nolink:hover{
   .project-image {
     margin-bottom: 15px;
   }
-  /*Скрываем кнопку выбора языка*/
-  .lang-chooser {
-    display: none;
-  }
   /* ======= Меню ======= */
   /* ======= ЗАКЛЮЧЕНИЯ ======= */
   /* Компонент сбросит стили браузера кнопки */
@@ -727,21 +704,24 @@ a.nolink:hover{
     transform: rotate(-45deg) translate3d(-.285em,-.3em, 0);
     opacity: 0;
   }
-  /* ======= НАСТРОЙКИ МЕНЮ ======= */
-  :root{
-    --colorWhite: #dae3e7;
-    --colorMain: #778492;
-    --mobile-menuCircleSize: 7rem;
-    --mobile-menuCircleOffset: 0.7rem;
-    --mobile-menuHamburgerWidth: 2.7rem;
-    --mobile-menuHamburgerHeight: 2rem;
-    --mobile-menuCircleBackgroundColor: var(--colorMain);
-    --mobile-menuHamburgerBackgroundColor: var(--colorWhite);
-    --mobile-menuHaburgerOutlineColor: var(--colorMain);
-    --mobile-hamburgerThickness: 4px;
-    --mobile-hamburgerDisplay: inline-flex;
-    --mobile-hamburgerBorderRadius: 5px;
+  .lang-disable {
+    display: none !important;
   }
+  /* ======= НАСТРОЙКИ МЕНЮ ======= */
+  :root {
+	--colorWhite: #dae3e7;
+	--colorMain: #778492;
+	--mobile-menuCircleSize: 10rem;
+	--mobile-menuCircleOffset: 2rem;
+	--mobile-menuHamburgerWidth: 3rem;
+	--mobile-menuHamburgerHeight: 2.4rem;
+	--mobile-menuCircleBackgroundColor: var(--colorMain);
+	--mobile-menuHamburgerBackgroundColor: var(--colorWhite);
+	--mobile-menuHaburgerOutlineColor: var(--colorMain);
+	--mobile-hamburgerThickness: 4px;
+	--mobile-hamburgerDisplay: inline-flex;
+	--mobile-hamburgerBorderRadius: 5px;
+}
   .mobile-menu_activated{
     --mobile-menuHaburgerOutlineColor: var(--colorWhite);
   }

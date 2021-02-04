@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-02 22:05+0200\n"
+"POT-Creation-Date: 2021-02-04 08:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,6 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%"
 "100>=11 && n%100<=14)? 2 : 3);\n"
+
 #: .\admin.py:16 .\models.py:29
 msgid "Photo"
 msgstr "Фото"
@@ -30,7 +31,7 @@ msgstr "Социальные сети"
 msgid "Contacts"
 msgstr "Контакты"
 
-#: .\admin.py:26 .\templates\main_page\templates\index.html:36
+#: .\admin.py:26 .\templates\main_page\templates\index.html:38
 msgid "Basic Information"
 msgstr "Основная информация"
 
@@ -66,7 +67,7 @@ msgstr "LinkedIn"
 msgid "GitHub"
 msgstr "GitHub"
 
-#: .\models.py:59 .\templates\main_page\templates\index.html:50
+#: .\models.py:59 .\templates\main_page\templates\index.html:52
 msgid "Phone"
 msgstr "Телефон"
 
@@ -74,7 +75,8 @@ msgstr "Телефон"
 msgid "Email"
 msgstr "Почта"
 
-#: .\models.py:70 .\templates\main_page\templates\index.html:64
+#: .\models.py:70 .\templates\main_page\templates\index.html:83
+#: .\templates\main_page\templates\index.html:278
 msgid "About me"
 msgstr "Обо мне"
 
@@ -87,7 +89,8 @@ msgid "Skill"
 msgstr "Навык"
 
 #: .\models.py:83 .\models.py:195
-#: .\templates\main_page\templates\index.html:147
+#: .\templates\main_page\templates\index.html:180
+#: .\templates\main_page\templates\index.html:298
 msgid "Education"
 msgstr "Образование"
 
@@ -143,7 +146,8 @@ msgstr "Название"
 msgid "Level"
 msgstr "Уровень"
 
-#: .\models.py:166 .\templates\main_page\templates\index.html:115
+#: .\models.py:166 .\templates\main_page\templates\index.html:144
+#: .\templates\main_page\templates\index.html:293
 msgid "Skills"
 msgstr "Навыки"
 
@@ -155,7 +159,8 @@ msgstr "Университет"
 msgid "Educations"
 msgstr "Образование"
 
-#: .\models.py:223 .\templates\main_page\templates\index.html:165
+#: .\models.py:223 .\templates\main_page\templates\index.html:201
+#: .\templates\main_page\templates\index.html:303
 msgid "Languages"
 msgstr "Языки"
 
@@ -171,66 +176,69 @@ msgstr "Музыка для кодинга"
 msgid "Musics4Code"
 msgstr "Музыка для кодинга"
 
-#: .\templates\main_page\templates\index.html:28
+#: .\templates\main_page\templates\index.html:29
 msgid "PHONE"
 msgstr "ТЕЛЕФОН"
 
-#: .\templates\main_page\templates\index.html:31
+#: .\templates\main_page\templates\index.html:32
 msgid "MAIL"
 msgstr "ПОЧТА"
 
-#: .\templates\main_page\templates\index.html:42
+#: .\templates\main_page\templates\index.html:44
 msgid "Odessa, UA"
 msgstr "Одесса, Украина"
 
-#: .\templates\main_page\templates\index.html:73
+#: .\templates\main_page\templates\index.html:94
+#: .\templates\main_page\templates\index.html:283
 msgid "Work experience"
 msgstr "Опыт работы"
 
-#: .\templates\main_page\templates\index.html:96
+#: .\templates\main_page\templates\index.html:120
 msgid "GitHub Activity"
 msgstr "GitHub Активность"
 
-#: .\templates\main_page\templates\index.html:106
+#: .\templates\main_page\templates\index.html:132
+#: .\templates\main_page\templates\index.html:288
 msgid "GitHub Repos"
 msgstr "GitHub Репозитории"
 
-#: .\templates\main_page\templates\index.html:124
+#: .\templates\main_page\templates\index.html:153
 msgid "Beginner"
 msgstr "Начальный"
 
-#: .\templates\main_page\templates\index.html:126
+#: .\templates\main_page\templates\index.html:155
 msgid "Middle"
 msgstr "Средний"
 
-#: .\templates\main_page\templates\index.html:128
+#: .\templates\main_page\templates\index.html:157
 msgid "Senior"
 msgstr "Старший"
 
-#: .\templates\main_page\templates\index.html:130
+#: .\templates\main_page\templates\index.html:159
 msgid "Pro"
 msgstr "Про"
 
-#: .\templates\main_page\templates\index.html:173
+#: .\templates\main_page\templates\index.html:209
 msgid "Native Speaker"
 msgstr "Родной"
 
-#: .\templates\main_page\templates\index.html:175
+#: .\templates\main_page\templates\index.html:211
 msgid "Fluent"
 msgstr "Свободное владение"
 
-#: .\templates\main_page\templates\index.html:177
+#: .\templates\main_page\templates\index.html:213
 msgid "Advanced"
 msgstr "Продвинутый"
 
-#: .\templates\main_page\templates\index.html:179
+#: .\templates\main_page\templates\index.html:215
 msgid "Technical Documentation"
 msgstr "Техническая документация"
 
-#: .\templates\main_page\templates\index.html:181
+#: .\templates\main_page\templates\index.html:217
 msgid "Basic"
 msgstr "Базовый"
 
-#: .\templates\main_page\templates\index.html:207
+#: .\templates\main_page\templates\index.html:246
+#: .\templates\main_page\templates\index.html:308
 msgid "Favourite coding music"
 msgstr "Музыка для кодинга"
