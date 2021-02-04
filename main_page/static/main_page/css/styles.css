@@ -711,8 +711,8 @@ a.nolink:hover{
   :root {
 	--colorWhite: #dae3e7;
 	--colorMain: #778492;
-	--mobile-menuCircleSize: 10rem;
-	--mobile-menuCircleOffset: 2rem;
+	--mobile-menuCircleSize: 9rem;
+	--mobile-menuCircleOffset: 1rem;
 	--mobile-menuHamburgerWidth: 3rem;
 	--mobile-menuHamburgerHeight: 2.4rem;
 	--mobile-menuCircleBackgroundColor: var(--colorMain);
@@ -739,6 +739,12 @@ a.nolink:hover{
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
   }
+  .mobile-menu__lang_sep {
+	margin-bottom: 0;
+	margin-top: 0;
+	border-top-width: 1px;
+	border-color: var(--colorWhite);
+}
 }
 /* ======= Для экранов больше 1400 ======= */
 @media (min-width: 1400px) {
