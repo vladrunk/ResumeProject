@@ -24,15 +24,44 @@
                 </ul>
             </div>
             {# profile #}
-            <div class="center-block hidden-md hidden-lg">
-                <a class="btn btn-lg btn-success" href="tel:{{ phone }}" target="_blank">
-                <i class="fas fa-phone-square-alt"></i>{% translate "PHONE" %}
-                </a>
-                <a class="btn btn-lg btn-success" href="mailto:{{ email }}" target="_blank">
-                <i class="far fa-envelope-open"></i>{% translate "MAIL" %}
-                </a>
+            <div class="lang__chooser pull-right hidden-sm hidden-xs">
+                <label class="f">
+                    <input class="f__input"
+                           type="checkbox"
+                           name="faction"
+                           value="{% if browse_lang == 'ru' %}en-us{% else %}ru{% endif %}"
+                           {% if browse_lang == 'ru' %}checked{% else %}{% endif %}
+                    >
+                    <span class="f__switch">
+                        <span class="f__handle">
+                            <span class="f__1"></span>
+                            <span class="f__2">
+                                <span class="f__2a"></span>
+                                <span class="f__2b"></span>
+                                <span class="f__2c"></span>
+                                <span class="f__2d"></span>
+                                <span class="f__2e"></span>
+                            </span>
+                            <span class="f__3"></span>
+                            <span class="f__4"></span>
+                            <span class="f__5"></span>
+                            <span class="f__6"></span>
+                            <span class="f__7"></span>
+                            <span class="f__8"></span>
+                            <span class="f__9"></span>
+                            <span class="f__10"></span>
+                            <span class="f__11"></span>
+                            <span class="f__12"></span>
+                            <span class="f__13"></span>
+                            <span class="f__14"></span>
+                            <span class="f__15"></span>
+                            <span class="f__16"></span>
+                            <span class="f__17"></span>
+                        </span>
+                    </span>
+                </label>
             </div>
-            {# buttons visible on mobile #}
+            {# lang chooser visible on desktop #}
             <div class="info pull-right hidden-sm hidden-xs">
                 <div class="section-inner">
                     <h2 class="heading sr-only">{% translate "Basic Information" %}</h2>
@@ -58,26 +87,26 @@
                 </div>
                 {# section-inner #}
             </div>
-            {# info div #}
+            {# info visible on desktop #}
+            <div class="center-block hidden-md hidden-lg">
+                <a class="btn btn-lg btn-success" href="tel:{{ phone }}" target="_blank">
+                <i class="fas fa-phone-square-alt"></i>{% translate "PHONE" %}
+                </a>
+                <a class="btn btn-lg btn-success" href="mailto:{{ email }}" target="_blank">
+                <i class="far fa-envelope-open"></i>{% translate "MAIL" %}
+                </a>
+            </div>
+            {# buttons visible on mobile #}
         </div>
         {# container #}
     </header>
-    {# coffee #}
-    <div class="coffee hidden-sm hidden-xs">
-      <div class="tasse">
-        <div class="smoke">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="griff"></div>
-        <div class="untertasse"></div>
-      </div>
-    </div>
     {# site content #}
     <div class="container sections-wrapper">
+        {# row #}
         <div class="row">
+            {# primary #}
             <div class="primary col-md-8 col-sm-12 col-xs-12">
+                {# about section #}
                 <section id="anchor-about-me" class="about section">
                     <div class="section-inner">
                         <h2 class="heading">{% translate "About me" %}</h2>
@@ -88,7 +117,7 @@
                     </div>
                     {# section-inner #}
                 </section>
-                {# about section #}
+                {# experience section #}
                 <section id="anchor-work-exp" class="experience section">
                     <div class="section-inner">
                         <h2 class="heading">{% translate "Work experience" %}</h2>
@@ -114,7 +143,7 @@
                     </div>
                     {# section-inner #}
                 </section>
-                {# experience section #}
+                {# github section desktop #}
                 <section id="anchor-git-desktop" class="github section desktop visible-md visible-lg hidden-xs hidden-sm">
                     <div class="section-inner">
                         <h2 class="heading hidden-sm hidden-xs">{% translate "GitHub Activity" %}</h2>
@@ -122,11 +151,12 @@
                             <div class="github-calendar">
                             </div>
                         </div>
+                        <span>The plugin is experiencing temporary technical problems.</span>
                         {# github-graph #}
                     </div>
                     {# section-inner #}
                 </section>
-                {# github section desktop #}
+                {# github section mobile #}
                 <section id="anchor-git-mobile" class="github section mobile visible-xs visible-sm hidden-md hidden-lg">
                     <div class="section-inner">
                         <h2 class="heading">{% translate "GitHub Repos" %}</h2>
@@ -135,10 +165,10 @@
                     </div>
                     {# section-inner #}
                 </section>
-                {# github section mobile #}
             </div>
-            {# primary #}
+            {# secondary #}
             <div class="secondary col-md-4 col-sm-12 col-xs-12">
+                {# skills section #}
                 <aside id="anchor-skills" class="skills aside section">
                     <div class="section-inner">
                         <h2 class="heading">{% translate "Skills" %}</h2>
@@ -174,7 +204,7 @@
                     </div>
                     {# section-inner #}
                 </aside>
-                {# skills section #}
+                {# education section #}
                 <aside id="anchor-edu" class="education aside section">
                     <div class="section-inner">
                         <h2 class="heading">{% translate "Education" %}</h2>
@@ -195,7 +225,7 @@
                     </div>
                     {# section-inner #}
                 </aside>
-                {# education section #}
+                {# languages section #}
                 <aside id="anchor-langs" class="languages aside section">
                     <div class="section-inner">
                         <h2 class="heading">{% translate "Languages" %}</h2>
@@ -240,7 +270,7 @@
                     </div>
                     {# section-inner #}
                 </aside>
-                {# languages section #}
+                {# list music section #}
                 <aside id="anchor-music" class="list music aside section">
                     <div class="section-inner">
                         <h2 class="heading">{% translate "Favourite coding music" %}</h2>
@@ -258,11 +288,8 @@
                     </div>
                     {# section-inner #}
                 </aside>
-                {# list music section #}
             </div>
-            {# secondary #}
         </div>
-        {# row #}
     </div>
     {# easter egg #}
     <div class="toasty-ee">

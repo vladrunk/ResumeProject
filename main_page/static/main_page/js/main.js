@@ -39,16 +39,22 @@ $(document).ready(function($) {
     } else {
         $('.profile-image').css('cursor', 'default');
     }
-
-    /*======= I18N Buttons =======*/
+    /*======= Mobile menu Lang btn =======*/
     let lang_enable = $('.lang-enable');
     lang_enable.on('click', function () {
         document.cookie = 'lang=' + $(this).data('lang') + '; Max-Age=2592000; Path=/; SameSite=Lax';
         document.location.reload();
     });
+    /*======= Desktop Lang btn =======*/
+    let lang__chooser = $('.lang__chooser .f__input');
+    lang__chooser.on('click', function () {
+        setTimeout(() => {
+            document.cookie = 'lang=' + $(this).val() + '; Max-Age=2592000; Path=/; SameSite=Lax';
+            document.location.reload();
+        }, 1000)
+    });
     /*======= GitHub Calendar =======*/
     GitHubCalendar(".github-calendar", "vladrunk", { responsive: true });
-
     /*======= Skillset =======*/
     $('.level-bar-inner').css('width', '0');
     $(window).on('load', function() {
@@ -62,67 +68,55 @@ $(document).ready(function($) {
     /*=======  Bootstrap Tooltip for Skillset =======*/
     $('.level-label').tooltip();
 });
+
 (function(){
-  'use strict';
+    // 'use strict';
 
-  class Menu {
-    constructor(settings) {
-      this.menuNode = settings.menuNode;
-      this.state = false;
-      this.menuStateTextNode = settings.menuStateTextNode || this.menuNode.querySelector('.mobile-menu__screen-reader');
-      this.menuOpenedText = settings.menuOpenedText || 'Open menu';
-      this.menuClosedText = settings.menuClosedText || 'Close menu';
+    class Menu {
+        constructor(settings) {
+            this.menuNode = settings.menuNode;
+            this.state = false;
+            this.menuStateTextNode = settings.menuStateTextNode || this.menuNode.querySelector('.mobile-menu__screen-reader');
+            this.menuOpenedText = settings.menuOpenedText || 'Open menu';
+            this.menuClosedText = settings.menuClosedText || 'Close menu';
+        }
+
+        changeState(state) {
+            return this.state = !state;
+        }
+
+        changeStateText(state, node) {
+            let text = (state !== true) ? this.menuOpenedText : this.menuClosedText;
+            node.textContent = text;
+            return text;
+        }
+
+        toggleMenuState(className) {
+            let state;
+            if (typeof className !== 'string' || className.length === 0) {
+                return console.log('you did not give the class for the toggleState function');
+            }
+            state = this.changeState(this.state);
+            if (state) {
+            document.querySelector('body').style.overflow = 'hidden';
+            } else {
+            document.querySelector('body').style.overflow = 'auto';
+            }
+            this.changeStateText(state, this.menuStateTextNode);
+            this.menuNode.classList.toggle(className);
+            return state;
+        }
     }
-
-    changeState(state) {
-      return this.state = !state;
+    const jsMenuNode = document.querySelector('.mobile-menu');
+    const menu = new Menu ({
+        menuNode: jsMenuNode
+    });
+    function callMenuToggle() {
+        menu.toggleMenuState('mobile-menu_activated');
     }
-
-    changeStateText(state, node) {
-      let text = (state !== true) ? this.menuOpenedText : this.menuClosedText;
-
-      node.textContent = text;
-      return text;
-    }
-
-    toggleMenuState(className) {
-
-      let state;
-
-      if (typeof className !== 'string' || className.length === 0) {
-        return console.log('you did not give the class for the toggleState function');
-      }
-
-      state = this.changeState(this.state);
-
-      if (state) {
-          document.querySelector('body').style.overflow = 'hidden';
-      } else {
-          document.querySelector('body').style.overflow = 'auto';
-      }
-
-      this.changeStateText(state, this.menuStateTextNode);
-      this.menuNode.classList.toggle(className);
-
-      return state;
-    }
-  }
-
-  const jsMenuNode = document.querySelector('.mobile-menu');
-  const demoMenu = new Menu ({
-    menuNode: jsMenuNode
-  });
-
-  function callMenuToggle(event) {
-    demoMenu.toggleMenuState('mobile-menu_activated');
-  }
-
-  jsMenuNode.querySelector('.mobile-menu__toggle').addEventListener('click', callMenuToggle);
-
-  let menu_links = jsMenuNode.querySelectorAll('.h-link');
-  [].forEach.call(menu_links, function (menu_link) {
-      menu_link.addEventListener('click', callMenuToggle);
-  });
-
-
+    jsMenuNode.querySelector('.mobile-menu__toggle').addEventListener('click', callMenuToggle);
+    let menu_links = jsMenuNode.querySelectorAll('.h-link');
+    [].forEach.call(menu_links, function (menu_link) {
+        menu_link.addEventListener('click', callMenuToggle);
+    });
 })();
