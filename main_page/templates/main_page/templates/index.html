@@ -5,7 +5,7 @@
 
 {% block body %}
     {# header #}
-    <header class="header">
+    <header id="anchor-contacts" class="header">
         <div class="container">
             <div class="profile-image-wrapper">
                 <img class="profile-image img-responsive pull-left"
@@ -272,6 +272,11 @@
     <div class="mobile-menu">
         <nav class="mobile-menu__nav">
             <ul class="mobile-menu__list r-list">
+                <li class="mobile-menu__group">
+                    <a class="mobile-menu__link r-link h-link"
+                       href="{{ req.path }}#anchor-contacts"
+                    >{% translate "Contacts" %}</a>
+                </li>
                 <li class="mobile-menu__group">
                     <a class="mobile-menu__link r-link h-link"
                        href="{{ req.path }}#anchor-about-me"

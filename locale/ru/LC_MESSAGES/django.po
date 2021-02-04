@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-04 08:27+0200\n"
+"POT-Creation-Date: 2021-02-04 09:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,7 @@ msgstr "Фото"
 msgid "Social networks"
 msgstr "Социальные сети"
 
-#: .\admin.py:23
+#: .\admin.py:23 .\templates\main_page\templates\index.html:278
 msgid "Contacts"
 msgstr "Контакты"
 
@@ -76,7 +76,7 @@ msgid "Email"
 msgstr "Почта"
 
 #: .\models.py:70 .\templates\main_page\templates\index.html:83
-#: .\templates\main_page\templates\index.html:278
+#: .\templates\main_page\templates\index.html:283
 msgid "About me"
 msgstr "Обо мне"
 
@@ -90,7 +90,7 @@ msgstr "Навык"
 
 #: .\models.py:83 .\models.py:195
 #: .\templates\main_page\templates\index.html:180
-#: .\templates\main_page\templates\index.html:298
+#: .\templates\main_page\templates\index.html:303
 msgid "Education"
 msgstr "Образование"
 
@@ -147,7 +147,7 @@ msgid "Level"
 msgstr "Уровень"
 
 #: .\models.py:166 .\templates\main_page\templates\index.html:144
-#: .\templates\main_page\templates\index.html:293
+#: .\templates\main_page\templates\index.html:298
 msgid "Skills"
 msgstr "Навыки"
 
@@ -160,7 +160,7 @@ msgid "Educations"
 msgstr "Образование"
 
 #: .\models.py:223 .\templates\main_page\templates\index.html:201
-#: .\templates\main_page\templates\index.html:303
+#: .\templates\main_page\templates\index.html:308
 msgid "Languages"
 msgstr "Языки"
 
@@ -189,7 +189,7 @@ msgid "Odessa, UA"
 msgstr "Одесса, Украина"
 
 #: .\templates\main_page\templates\index.html:94
-#: .\templates\main_page\templates\index.html:283
+#: .\templates\main_page\templates\index.html:288
 msgid "Work experience"
 msgstr "Опыт работы"
 
@@ -198,7 +198,7 @@ msgid "GitHub Activity"
 msgstr "GitHub Активность"
 
 #: .\templates\main_page\templates\index.html:132
-#: .\templates\main_page\templates\index.html:288
+#: .\templates\main_page\templates\index.html:293
 msgid "GitHub Repos"
 msgstr "GitHub Репозитории"
 
@@ -239,6 +239,6 @@ msgid "Basic"
 msgstr "Базовый"
 
 #: .\templates\main_page\templates\index.html:246
-#: .\templates\main_page\templates\index.html:308
+#: .\templates\main_page\templates\index.html:313
 msgid "Favourite coding music"
 msgstr "Музыка для кодинга"
