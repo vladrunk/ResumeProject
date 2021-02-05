@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 
 from .forms import LanguageForm
-from .models import User, Experience, Language, Education, Skill, Music4Code
+from .models import User, Experience, Language, Education, Skill, Music4Code, Project
 
 from modeltranslation.admin import TabbedTranslationAdmin
 
@@ -24,7 +24,7 @@ class UserAdmin(TabbedTranslationAdmin):
             'fields': ('phone', 'email'),
         }),
         (_('Basic Information'), {
-            'fields': ('about', 'experience', 'skill', 'education', 'language', 'music'),
+            'fields': ('about', 'project', 'experience', 'skill', 'education', 'language', 'music'),
         }),
     )
 
@@ -53,3 +53,8 @@ class LanguageAdmin(TabbedTranslationAdmin):
 @admin.register(Music4Code)
 class Music4CodeAdmin(admin.ModelAdmin):
     list_display = ['id', 'title', 'link', ]
+
+
+@admin.register(Project)
+class ProjectAdmin(TabbedTranslationAdmin):
+    list_display = ['id', 'title', 'is_main', ]

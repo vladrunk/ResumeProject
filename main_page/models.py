@@ -8,6 +8,7 @@ from datetime import date
 
 YEAR_CHOICES = [(r, r) for r in range(2010, date.today().year + 1)]
 
+
 class User(models.Model):
     first_name = models.CharField(
         default='',
@@ -68,6 +69,11 @@ class User(models.Model):
         default='',
         blank=False,
         verbose_name=_('About me'),
+    )
+    project = models.ManyToManyField(
+        verbose_name=_('Project'),
+        to='Project',
+        related_name='user_project',
     )
     experience = models.ManyToManyField(
         verbose_name=_('Experience'),
@@ -240,3 +246,36 @@ class Music4Code(models.Model):
     class Meta:
         verbose_name = _('Music4Code')
         verbose_name_plural = _('Musics4Code')
+
+
+class Project(models.Model):
+    is_main = models.BooleanField(
+        default=False,
+        verbose_name=_('Main project'),
+        unique=True,
+    )
+    title = models.CharField(
+        default='',
+        verbose_name=_('Title'),
+        max_length=255,
+    )
+    desc = models.TextField(
+        default='',
+        blank=False,
+        verbose_name=_('Description'),
+    )
+    img = models.ImageField(
+        upload_to='images/projects',
+        verbose_name=_('Image'),
+    )
+    link = models.URLField(
+        default='',
+        verbose_name=_('Project link'),
+    )
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = _('Project')
+        verbose_name_plural = _('Projects')

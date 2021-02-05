@@ -6,7 +6,9 @@
 {% block body %}
     {# header #}
     <header id="anchor-contacts" class="header">
+        {# container #}
         <div class="container">
+            {# profile #}
             <div class="profile-image-wrapper">
                 <img class="profile-image img-responsive pull-left"
                     src="{{ profile_image }}"
@@ -23,7 +25,7 @@
                     <li class="last-item"><a href="https://github.com/{{ git }}" target="_blank"><i class="fab fa-github-alt fa-fw"></i></a></li>
                 </ul>
             </div>
-            {# profile #}
+            {# lang chooser visible on desktop #}
             <div class="lang__chooser pull-right hidden-sm hidden-xs">
                 <label class="f">
                     <input class="f__input"
@@ -61,7 +63,7 @@
                     </span>
                 </label>
             </div>
-            {# lang chooser visible on desktop #}
+            {# info visible on desktop #}
             <div class="info pull-right hidden-sm hidden-xs">
                 <div class="section-inner">
                     <h2 class="heading sr-only">{% translate "Basic Information" %}</h2>
@@ -87,7 +89,7 @@
                 </div>
                 {# section-inner #}
             </div>
-            {# info visible on desktop #}
+            {# buttons visible on mobile #}
             <div class="center-block hidden-md hidden-lg">
                 <a class="btn btn-lg btn-success" href="tel:{{ phone }}" target="_blank">
                 <i class="fas fa-phone-square-alt"></i>{% translate "PHONE" %}
@@ -96,9 +98,7 @@
                 <i class="far fa-envelope-open"></i>{% translate "MAIL" %}
                 </a>
             </div>
-            {# buttons visible on mobile #}
         </div>
-        {# container #}
     </header>
     {# site content #}
     <div class="container sections-wrapper">
@@ -116,6 +116,87 @@
                         {# content #}
                     </div>
                     {# section-inner #}
+                </section>
+                {# project section #}
+                <section id="anchor-project" class="latest section">
+                    <div class="section-inner shadow-sm rounded">
+                        <h2 class="heading">{% translate "Projects" %}</h2>
+                        <div class="content">
+                            {% for project in projects.all %}
+                                {% if project.is_main %}
+                                    {#Главный проект#}
+                                    <div class="item featured text-center">
+                                        <div class="featured-image">
+                                            {#Ссылка на проект#}
+                                            <a href="{{ project.link }}"
+                                               target="_blank">
+                                            {#Скрин проекта#}
+                                            <img class="img-fluid project-image rounded shadow-sm"
+                                                 src="{{ project.img.url }}"
+                                                 alt="{{ project.title}}" />
+                                            </a>
+                                        </div>
+                                        {#Заголовок проекта#}
+                                        <h3 class="title mb-3">
+                                            {#Ссылка на проект#}
+                                            <a href="{{ project.link }}"
+                                               target="_blank"
+                                            >
+                                                {#Текст заголовка#}
+                                                {{ project.title }}
+                                            </a>
+                                        </h3>
+                                        {#Описание проекта#}
+                                        <div class="desc text-left">
+                                            <p>{{ project.desc }}</p>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                            {#Разделить от ост проектов#}
+                            <hr class="divider" />
+                            {% for project in projects.all %}
+                                {% if not project.is_main %}
+                                    {#Проект#}
+                                    <div class="item row project">
+                                        {#Ссылка на проект#}
+                                        <a class="col-md-4 col-12"
+                                           href="{{ project.link }}"
+                                           target="_blank">
+                                        {#Изображение#}
+                                        <img class="img-fluid project-image rounded shadow-sm"
+                                             src="{{ project.img.url }}"
+                                             alt="{{ project.title }}" />
+                                        </a>
+                                        {#Описание#}
+                                        <div class="desc col-md-8 col-12">
+                                            {#Заголовок#}
+                                            <h3 class="title">
+                                                {#Ссылка на проект#}
+                                                <a href="{{ project.link }}"
+                                                   target="_blank"
+                                                >
+                                                    {{ project.title}}
+                                                </a>
+                                            </h3>
+                                            {#Описание проекта#}
+                                            <p class="mb-2">
+                                                {{ project.desc }}
+                                            </p>
+                                            {#Ссылка на проект#}
+                                            <p><a class="more-link"
+                                                  href="{{ project.link }}"
+                                                  target="_blank"
+                                            >
+                                                <i class="fas fa-external-link-alt"></i>
+                                                {% translate "Go to project" %}
+                                            </a></p>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
                 </section>
                 {# experience section #}
                 <section id="anchor-work-exp" class="experience section">
@@ -308,6 +389,11 @@
                     <a class="mobile-menu__link r-link h-link"
                        href="{{ req.path }}#anchor-about-me"
                     >{% translate "About me" %}</a>
+                </li>
+                <li class="mobile-menu__group">
+                    <a class="mobile-menu__link r-link h-link"
+                       href="{{ req.path }}#anchor-project"
+                    >{% translate "Projects" %}</a>
                 </li>
                 <li class="mobile-menu__group">
                     <a class="mobile-menu__link r-link h-link"

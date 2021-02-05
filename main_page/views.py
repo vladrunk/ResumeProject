@@ -27,6 +27,7 @@ def index(req):
                 'linkedin': user.linkedin,
                 'git': user.git,
                 'about': user.about,
+                'projects': user.project,
                 'work_exp': user.experience,
                 'skills': user.skill,
                 'edus': user.education,
