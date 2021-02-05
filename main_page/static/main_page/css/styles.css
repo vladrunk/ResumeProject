@@ -151,6 +151,11 @@ a.dotted-link:hover {
   font-size: 14px;
 }
 
+/* ======= Обо мне ======= */
+.about p {
+    white-space: pre-line;
+}
+
 /* ======= Проекты ======= */
 .projects .item {
   margin-bottom: 30px;
