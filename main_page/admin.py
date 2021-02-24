@@ -6,6 +6,7 @@ from .models import User, Experience, Language, Education, Skill, Music4Code, Pr
 
 from modeltranslation.admin import TabbedTranslationAdmin
 
+
 @admin.register(User)
 class UserAdmin(TabbedTranslationAdmin):
     list_display = ['id', 'first_name', 'last_name', ]

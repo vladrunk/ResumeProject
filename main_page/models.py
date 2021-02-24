@@ -252,7 +252,7 @@ class Project(models.Model):
     is_main = models.BooleanField(
         default=False,
         verbose_name=_('Main project'),
-        unique=True,
+        null=False,
     )
     title = models.CharField(
         default='',
